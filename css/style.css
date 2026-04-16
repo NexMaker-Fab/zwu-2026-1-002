@@ -9,12 +9,9 @@
     --primary-color: var(--color-sage);
     --secondary-color: var(--color-teal);
     --accent-color: var(--color-cream);
-    --gradient-start: var(--color-sage);
-    --gradient-mid: var(--color-teal);
-    --gradient-end: var(--color-sky);
     --text-dark: var(--color-brown);
     --text-light: #6b7280;
-    --bg-light: #fafafa;
+    --bg-light: #F5F5F0;          /* 浅米色背景 */
     --white: #ffffff;
     --border-color: #e5e7eb;
     --nav-height: 60px;
@@ -58,10 +55,7 @@ nav {
 .logo {
     font-size: 1.8rem;
     font-weight: bold;
-    background: linear-gradient(45deg, var(--gradient-start), var(--gradient-mid), var(--gradient-end));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--color-sage);
     text-decoration: none;
     font-family: 'Billabong', cursive;
 }
@@ -82,7 +76,7 @@ nav {
 
 .nav-links a:hover,
 .nav-links a.active {
-    color: var(--primary-color);
+    color: var(--color-sage);
 }
 
 .nav-links a.active::after {
@@ -92,7 +86,7 @@ nav {
     left: 0;
     width: 100%;
     height: 2px;
-    background: linear-gradient(45deg, var(--gradient-start), var(--gradient-mid), var(--gradient-end));
+    background-color: var(--color-sage);
 }
 
 /* 主要内容区域 */
@@ -114,23 +108,10 @@ p {
     color: var(--text-light);
 }
 
-/* Ins 风格渐变背景 */
-.gradient-bg {
-    background: linear-gradient(45deg, var(--gradient-start), var(--gradient-mid), var(--gradient-end));
-    padding: 3px;
-    border-radius: 12px;
-}
-
-.gradient-bg-inner {
-    background: var(--white);
-    border-radius: 10px;
-    padding: 30px;
-}
-
-/* 按钮样式 - Ins 风格 */
+/* 按钮样式 */
 .btn {
     display: inline-block;
-    background: linear-gradient(45deg, var(--gradient-start), var(--gradient-mid), var(--gradient-end));
+    background-color: var(--color-sage);
     color: var(--white);
     padding: 12px 28px;
     border-radius: 8px;
@@ -145,6 +126,7 @@ p {
 .btn:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(124, 138, 122, 0.3);
+    background-color: #6a7868;
 }
 
 .btn-outline {
@@ -188,12 +170,7 @@ p {
     object-fit: cover;
     margin: 0 auto 20px;
     display: block;
-    border: 3px solid transparent;
-    background: linear-gradient(45deg, var(--gradient-start), var(--gradient-mid), var(--gradient-end)) border-box;
-    -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
-    mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
+    border: 3px solid var(--color-sage);
 }
 
 .avatar-small {
@@ -225,7 +202,7 @@ p {
 /* 标签样式 */
 .tag {
     display: inline-block;
-    background: linear-gradient(45deg, var(--gradient-start), var(--gradient-mid), var(--gradient-end));
+    background-color: var(--color-sage);
     color: var(--white);
     padding: 6px 14px;
     border-radius: 20px;
@@ -246,7 +223,7 @@ p {
 
 .progress-fill {
     height: 100%;
-    background: linear-gradient(45deg, var(--gradient-start), var(--gradient-mid), var(--gradient-end));
+    background-color: var(--color-sage);
     border-radius: 4px;
     transition: width 0.3s;
 }
