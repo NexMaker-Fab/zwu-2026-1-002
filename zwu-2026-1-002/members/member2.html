@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>李四 - LifeTeam 成员</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .member-detail { max-width: 900px; margin: 40px auto; }
+        .member-header { background: var(--white); border-radius: 16px; padding: 50px; text-align: center; box-shadow: var(--shadow-md); margin-bottom: 30px; }
+        .member-avatar { width: 180px; height: 180px; border-radius: 50%; margin: 0 auto 25px; background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); display: flex; align-items: center; justify-content: center; font-size: 4rem; font-weight: bold; color: var(--white); box-shadow: var(--shadow-lg); }
+        .member-name { font-size: 2.5rem; font-weight: 700; margin-bottom: 10px; color: var(--text-dark); }
+        .member-role { font-size: 1.3rem; color: var(--primary-color); margin-bottom: 20px; font-weight: 600; }
+        .member-bio { max-width: 600px; margin: 0 auto; color: var(--text-light); line-height: 1.8; }
+        .member-section { background: var(--white); border-radius: 16px; padding: 35px; box-shadow: var(--shadow-md); margin-bottom: 25px; }
+        .member-section h3 { font-size: 1.5rem; margin-bottom: 20px; color: var(--primary-color); border-bottom: 2px solid #e5e7eb; padding-bottom: 10px; }
+        .skills-grid { display: flex; flex-wrap: wrap; gap: 12px; }
+        .skill-tag { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: var(--white); padding: 10px 20px; border-radius: 25px; font-size: 0.95rem; font-weight: 600; }
+        .timeline-item { padding: 20px; border-left: 3px solid var(--primary-color); margin-bottom: 20px; background: #f9fafb; border-radius: 8px; }
+        .timeline-item h4 { font-size: 1.2rem; margin-bottom: 8px; color: var(--text-dark); }
+        .timeline-item p { color: var(--text-light); font-size: 0.95rem; }
+        .contact-links { display: flex; justify-content: center; gap: 20px; margin-top: 20px; }
+        .contact-link { display: inline-block; padding: 12px 25px; background-color: var(--primary-color); color: var(--white); text-decoration: none; border-radius: 8px; font-weight: 600; transition: all 0.3s; }
+        .contact-link:hover { background-color: var(--primary-dark); transform: translateY(-2px); }
+        .back-btn { display: inline-block; margin-bottom: 20px; color: var(--primary-color); text-decoration: none; font-weight: 600; transition: all 0.3s; }
+        .back-btn:hover { color: var(--primary-dark); padding-left: 10px; }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../index.html" class="logo">LifeTeam</a>
+            <ul class="nav-links">
+                <li><a href="../index.html">首页</a></li>
+                <li><a href="../index.html#team-members">团队成员</a></li>
+                <li><a href="../index.html#final-project">最终项目</a></li>
+                <li><a href="../index.html#course-practice">课程实践</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="member-detail">
+        <a href="../index.html#team-members" class="back-btn">← 返回团队列表</a>
+        
+        <div class="member-header">
+            <div class="member-avatar">李</div>
+            <h1 class="member-name">李四</h1>
+            <p class="member-role">后端开发工程师</p>
+            <p class="member-bio">
+                热衷于构建高性能、可扩展的后端系统。相信好的架构应该是简洁和优雅的。
+            </p>
+            
+            <div class="contact-links">
+                <a href="#" class="contact-link">GitHub</a>
+                <a href="#" class="contact-link">博客</a>
+                <a href="mailto:lisi@lifeteam.com" class="contact-link">发送邮件</a>
+            </div>
+        </div>
+
+        <div class="member-section">
+            <h3>🎯 技能专长</h3>
+            <div class="skills-grid">
+                <span class="skill-tag">Java</span>
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">Spring Boot</span>
+                <span class="skill-tag">Django</span>
+                <span class="skill-tag">MySQL</span>
+                <span class="skill-tag">Redis</span>
+                <span class="skill-tag">Microservices</span>
+                <span class="skill-tag">Docker</span>
+            </div>
+        </div>
+
+        <div class="member-section">
+            <h3>📚 个人简介</h3>
+            <div style="line-height: 1.8; color: var(--text-light);">
+                <p>我是李四，一名专注于后端技术的工程师。我对分布式系统和高并发场景有着浓厚的兴趣。</p>
+                <p>在团队中，我主要负责后端 API 设计、数据库优化和系统架构工作。</p>
+                <p>平时喜欢研究开源项目，也热衷于技术分享和写作。</p>
+            </div>
+        </div>
+
+        <div class="member-section">
+            <h3>💼 项目经历</h3>
+            <div class="timeline-item"><h4>智能团队协作平台</h4><p>负责后端架构设计和 API 开发，使用 Spring Boot + MySQL 实现了高可用的微服务系统。</p></div>
+            <div class="timeline-item"><h4>电商订单系统</h4><p>设计了支持百万级并发的订单处理系统，通过消息队列和缓存优化，将响应时间控制在毫秒级。</p></div>
+            <div class="timeline-item"><h4>数据可视化平台</h4><p>构建了实时数据处理管道，为前端提供高效的数据接口服务。</p></div>
+        </div>
+
+        <div class="member-section">
+            <h3>💡 座右铭</h3>
+            <div style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: var(--white); padding: 30px; border-radius: 12px; font-style: italic; font-size: 1.1rem; text-align: center;">
+                "复杂的事情简单做，你就是专家；简单的事情重复做，你就是赢家。"
+            </div>
+        </div>
+    </main>
+
+    <footer><p>&copy; 2024 LifeTeam. All rights reserved.</p></footer>
+</body>
+</html>

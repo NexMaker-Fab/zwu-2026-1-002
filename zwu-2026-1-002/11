@@ -1,0 +1,546 @@
+<!-- 
+  文件组织建议：
+  请在文件夹 "d:\桌面\ZWU2026\团队\11" 下创建以下结构：
+  
+  ├── index.html (首页)
+  ├── project.html (期末项目)
+  ├── exercises.html (课程练习)
+  ├── members/
+  │   ├── index.html (成员总览)
+  │   ├── member1.html (成员 1 详情 - 模板)
+  │   ├── member2.html (复制 member1.html 修改)
+  │   ├── ... (直到 member6.html)
+  └── css/
+      └── style.css (公共样式)
+
+  下面是各个文件的代码内容。
+-->
+
+<!-- ================= 1. 公共样式表 (css/style.css) ================= -->
+<!-- 请将此内容保存为 css/style.css -->
+/*
+:root {
+    --primary-color: #3b82f6;
+    --text-dark: #1f2937;
+    --text-light: #6b7280;
+    --bg-light: #f3f4f6;
+    --white: #ffffff;
+    --nav-height: 60px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: var(--bg-light);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* 导航栏 */
+header {
+    background-color: var(--white);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    height: var(--nav-height);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: var(--primary-color);
+}
+
+/* 主要内容区域 */
+main {
+    flex: 1;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    width: 100%;
+}
+
+h1, h2, h3 {
+    margin-bottom: 20px;
+    color: var(--text-dark);
+}
+
+p {
+    margin-bottom: 15px;
+    color: var(--text-light);
+}
+
+/* 按钮样式 */
+.btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background 0.3s;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #2563eb;
+}
+
+/* 卡片通用样式 */
+.card {
+    background: var(--white);
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    margin-bottom: 20px;
+}
+
+/* 响应式网格 */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+/* 成员头像占位 */
+.avatar-placeholder {
+    width: 100px;
+    height: 100px;
+    background-color: #d1d5db;
+    border-radius: 50%;
+    margin: 0 auto 15px;
+    display: block;
+}
+
+.team-photo-placeholder {
+    width: 100%;
+    max-width: 800px;
+    height: 400px;
+    background-color: #d1d5db;
+    margin: 20px auto;
+    display: block;
+    border-radius: 8px;
+}
+
+/* 标签样式 */
+.tag {
+    display: inline-block;
+    background-color: #e0e7ff;
+    color: #4338ca;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
+/* 页脚 */
+footer {
+    background-color: var(--white);
+    text-align: center;
+    padding: 20px;
+    margin-top: auto;
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+/* 移动端适配 */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        height: auto;
+        padding: 15px;
+    }
+    .nav-links {
+        margin-top: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+*/
+
+<!-- ================= 2. 首页 (index.html) ================= -->
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LifeTeam - 首页</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">LifeTeam</a>
+            <div class="nav-links">
+                <a href="index.html" class="active">首页</a>
+                <a href="members/index.html">团队成员</a>
+                <a href="project.html">期末项目</a>
+                <a href="exercises.html">课程练习</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="card" style="text-align: center;">
+            <h1>LifeTeam</h1>
+            <h2 style="color: var(--primary-color); margin-bottom: 20px;">[此处填写团队口号]</h2>
+            
+            <div class="team-photo-placeholder" title="团队合照占位图 800x400"></div>
+            
+            <p style="font-size: 1.1rem; max-width: 600px; margin: 0 auto 20px;">
+                我们是一个由 6 位充满热情的开发者组成的团队，专注于 Web 开发技术的学习与实践。
+            </p>
+            
+            <div style="display: flex; justify-content: center; gap: 40px; margin: 30px 0; flex-wrap: wrap;">
+                <div>
+                    <strong>成立时间</strong>
+                    <p>2023 年 9 月</p>
+                </div>
+                <div>
+                    <strong>团队理念</strong>
+                    <p>协作、创新、卓越</p>
+                </div>
+            </div>
+
+            <a href="members/index.html" class="btn">查看团队成员</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 LifeTeam. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+
+<!-- ================= 3. 团队成员总览页 (members/index.html) ================= -->
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>团队成员 - LifeTeam</title>
+    <!-- 注意路径，因为在 members 文件夹下，所以引用 ../css/style.css -->
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../index.html" class="logo">LifeTeam</a>
+            <div class="nav-links">
+                <a href="../index.html">首页</a>
+                <a href="index.html" class="active">团队成员</a>
+                <a href="../project.html">期末项目</a>
+                <a href="../exercises.html">课程练习</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <h1 style="text-align: center; margin-bottom: 40px;">我们的成员</h1>
+        
+        <div class="grid">
+            <!-- 成员 1 -->
+            <div class="card" style="text-align: center;">
+                <a href="member1.html">
+                    <div class="avatar-placeholder"></div>
+                    <h3>成员姓名 1</h3>
+                    <p style="color: var(--primary-color);">角色/职责</p>
+                </a>
+            </div>
+            <!-- 成员 2 -->
+            <div class="card" style="text-align: center;">
+                <a href="member2.html">
+                    <div class="avatar-placeholder"></div>
+                    <h3>成员姓名 2</h3>
+                    <p style="color: var(--primary-color);">角色/职责</p>
+                </a>
+            </div>
+            <!-- 成员 3 -->
+            <div class="card" style="text-align: center;">
+                <a href="member3.html">
+                    <div class="avatar-placeholder"></div>
+                    <h3>成员姓名 3</h3>
+                    <p style="color: var(--primary-color);">角色/职责</p>
+                </a>
+            </div>
+            <!-- 成员 4 -->
+            <div class="card" style="text-align: center;">
+                <a href="member4.html">
+                    <div class="avatar-placeholder"></div>
+                    <h3>成员姓名 4</h3>
+                    <p style="color: var(--primary-color);">角色/职责</p>
+                </a>
+            </div>
+            <!-- 成员 5 -->
+            <div class="card" style="text-align: center;">
+                <a href="member5.html">
+                    <div class="avatar-placeholder"></div>
+                    <h3>成员姓名 5</h3>
+                    <p style="color: var(--primary-color);">角色/职责</p>
+                </a>
+            </div>
+            <!-- 成员 6 -->
+            <div class="card" style="text-align: center;">
+                <a href="member6.html">
+                    <div class="avatar-placeholder"></div>
+                    <h3>成员姓名 6</h3>
+                    <p style="color: var(--primary-color);">角色/职责</p>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 LifeTeam. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+
+<!-- ================= 4. 成员个人页模板 (members/member1.html) ================= -->
+<!-- 
+  使用说明：
+  1. 此文件作为模板。
+  2. 要创建 member2.html 到 member6.html，只需复制此文件。
+  3. 重命名文件，并修改下方注释标记处的内容（姓名、角色、简介等）。
+-->
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>成员详情 - LifeTeam</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../index.html" class="logo">LifeTeam</a>
+            <div class="nav-links">
+                <a href="../index.html">首页</a>
+                <a href="index.html" class="active">团队成员</a>
+                <a href="../project.html">期末项目</a>
+                <a href="../exercises.html">课程练习</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="card" style="max-width: 800px; margin: 0 auto; text-align: center;">
+            <!-- [替换] 成员头像占位 -->
+            <div class="avatar-placeholder" style="width: 150px; height: 150px;"></div>
+            
+            <!-- [替换] 成员姓名 -->
+            <h1>成员姓名 1</h1>
+            
+            <!-- [替换] 角色/职位 -->
+            <h3 style="color: var(--primary-color); margin-bottom: 20px;">前端开发工程师</h3>
+            
+            <hr style="border: 0; border-top: 1px solid #eee; margin: 20px 0;">
+            
+            <!-- [替换] 个人简介 -->
+            <div style="text-align: left; margin-bottom: 20px;">
+                <h3>个人简介</h3>
+                <p>这里填写该成员的详细个人简介。例如：热爱编程，擅长 HTML/CSS/JS，对 React 有深入研究...</p>
+            </div>
+
+            <!-- [替换] 技能标签 -->
+            <div style="text-align: left; margin-bottom: 20px;">
+                <h3>技能栈</h3>
+                <div style="margin-top: 10px;">
+                    <span class="tag">HTML5</span>
+                    <span class="tag">CSS3</span>
+                    <span class="tag">JavaScript</span>
+                    <span class="tag">Git</span>
+                </div>
+            </div>
+
+            <!-- [替换] 座右铭 -->
+            <div style="background: #f9fafb; padding: 15px; border-radius: 6px; font-style: italic; color: #555;">
+                "这里填写成员的座右铭"
+            </div>
+            
+            <div style="margin-top: 30px;">
+                <a href="index.html" class="btn" style="background-color: #6b7280;">返回成员列表</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 LifeTeam. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+
+<!-- ================= 5. 期末项目页 (project.html) ================= -->
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>期末项目 - LifeTeam</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">LifeTeam</a>
+            <div class="nav-links">
+                <a href="index.html">首页</a>
+                <a href="members/index.html">团队成员</a>
+                <a href="project.html" class="active">期末项目</a>
+                <a href="exercises.html">课程练习</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="card">
+            <!-- [替换] 项目名称 -->
+            <h1>[项目名称占位]</h1>
+            
+            <!-- [替换] 项目简介 -->
+            <p style="font-size: 1.1rem; margin-bottom: 20px;">
+                这里填写项目的详细简介。描述项目解决了什么问题，主要功能是什么，以及项目的背景意义。
+            </p>
+
+            <!-- 项目截图占位 -->
+            <div style="width: 100%; height: 300px; background-color: #e5e7eb; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #9ca3af; margin-bottom: 20px;">
+                项目截图占位 (建议尺寸 1200x600)
+            </div>
+
+            <!-- 技术栈 -->
+            <h3>技术栈</h3>
+            <div style="margin-bottom: 20px;">
+                <span class="tag">Vue.js</span>
+                <span class="tag">Node.js</span>
+                <span class="tag">MySQL</span>
+                <span class="tag">Docker</span>
+            </div>
+
+            <!-- 团队分工 -->
+            <h3>团队分工</h3>
+            <ul style="list-style-position: inside; color: var(--text-light); line-height: 2;">
+                <li><strong>成员 A:</strong> 负责前端架构与界面实现</li>
+                <li><strong>成员 B:</strong> 负责后端 API 设计与数据库构建</li>
+                <li><strong>成员 C:</strong> 负责测试与文档编写</li>
+                <!-- 添加更多分工 -->
+            </ul>
+
+            <!-- 项目进度 -->
+            <h3>项目进度</h3>
+            <div style="background: #e0e7ff; height: 20px; border-radius: 10px; overflow: hidden; margin-top: 10px;">
+                <!-- 修改进度百分比 (style="width: 70%") -->
+                <div style="width: 70%; background: var(--primary-color); height: 100%;"></div>
+            </div>
+            <p style="font-size: 0.9rem; margin-top: 5px;">当前进度：70% (开发阶段)</p>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 LifeTeam. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+
+<!-- ================= 6. 课程练习页 (exercises.html) ================= -->
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>课程练习 - LifeTeam</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">LifeTeam</a>
+            <div class="nav-links">
+                <a href="index.html">首页</a>
+                <a href="members/index.html">团队成员</a>
+                <a href="project.html">期末项目</a>
+                <a href="exercises.html" class="active">课程练习</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <h1 style="margin-bottom: 30px;">课程练习列表</h1>
+        
+        <div class="grid">
+            <!-- 练习 1 -->
+            <div class="card">
+                <h3>练习一：HTML 基础结构</h3>
+                <p>掌握 HTML 文档的基本结构，包括 head, body, 常用标签的使用。</p>
+                <div style="margin: 15px 0;">
+                    <span class="tag" style="background: #dcfce7; color: #166534;">已完成</span>
+                </div>
+                <button class="btn" style="width: 100%; font-size: 0.9rem;">查看详情</button>
+            </div>
+
+            <!-- 练习 2 -->
+            <div class="card">
+                <h3>练习二：CSS 布局实战</h3>
+                <p>使用 Flexbox 和 Grid 进行页面布局，实现响应式设计。</p>
+                <div style="margin: 15px 0;">
+                    <span class="tag" style="background: #fef9c3; color: #854d0e;">进行中</span>
+                </div>
+                <button class="btn" style="width: 100%; font-size: 0.9rem;">查看详情</button>
+            </div>
+
+            <!-- 练习 3 -->
+            <div class="card">
+                <h3>练习三：JavaScript 交互</h3>
+                <p>通过 DOM 操作实现简单的页面交互效果，如轮播图、表单验证。</p>
+                <div style="margin: 15px 0;">
+                    <span class="tag" style="background: #f3f4f6; color: #374151;">未开始</span>
+                </div>
+                <button class="btn" style="width: 100%; font-size: 0.9rem;">查看详情</button>
+            </div>
+            
+            <!-- 复制上面的 div 块来添加更多练习 -->
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 LifeTeam. All rights reserved.</p>
+    </footer>
+</body>
+</html>

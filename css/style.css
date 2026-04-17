@@ -62,7 +62,9 @@ nav {
     font-weight: bold;
     color: #D5EAE3;
     text-decoration: none;
-    font-family: 'Billabong', cursive;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    letter-spacing: 2px;
+    text-transform: uppercase;
 }
 
 .nav-links {

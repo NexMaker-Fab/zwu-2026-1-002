@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>钱七 - LifeTeam 成员</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .member-detail { max-width: 900px; margin: 40px auto; }
+        .member-header { background: var(--white); border-radius: 16px; padding: 50px; text-align: center; box-shadow: var(--shadow-md); margin-bottom: 30px; }
+        .member-avatar { width: 180px; height: 180px; border-radius: 50%; margin: 0 auto 25px; background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); display: flex; align-items: center; justify-content: center; font-size: 4rem; font-weight: bold; color: var(--white); box-shadow: var(--shadow-lg); }
+        .member-name { font-size: 2.5rem; font-weight: 700; margin-bottom: 10px; color: var(--text-dark); }
+        .member-role { font-size: 1.3rem; color: var(--primary-color); margin-bottom: 20px; font-weight: 600; }
+        .member-bio { max-width: 600px; margin: 0 auto; color: var(--text-light); line-height: 1.8; }
+        .member-section { background: var(--white); border-radius: 16px; padding: 35px; box-shadow: var(--shadow-md); margin-bottom: 25px; }
+        .member-section h3 { font-size: 1.5rem; margin-bottom: 20px; color: var(--primary-color); border-bottom: 2px solid #e5e7eb; padding-bottom: 10px; }
+        .skills-grid { display: flex; flex-wrap: wrap; gap: 12px; }
+        .skill-tag { background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); color: var(--white); padding: 10px 20px; border-radius: 25px; font-size: 0.95rem; font-weight: 600; }
+        .timeline-item { padding: 20px; border-left: 3px solid var(--primary-color); margin-bottom: 20px; background: #f9fafb; border-radius: 8px; }
+        .timeline-item h4 { font-size: 1.2rem; margin-bottom: 8px; color: var(--text-dark); }
+        .timeline-item p { color: var(--text-light); font-size: 0.95rem; }
+        .contact-links { display: flex; justify-content: center; gap: 20px; margin-top: 20px; }
+        .contact-link { display: inline-block; padding: 12px 25px; background-color: var(--primary-color); color: var(--white); text-decoration: none; border-radius: 8px; font-weight: 600; transition: all 0.3s; }
+        .contact-link:hover { background-color: var(--primary-dark); transform: translateY(-2px); }
+        .back-btn { display: inline-block; margin-bottom: 20px; color: var(--primary-color); text-decoration: none; font-weight: 600; transition: all 0.3s; }
+        .back-btn:hover { color: var(--primary-dark); padding-left: 10px; }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../index.html" class="logo">LifeTeam</a>
+            <ul class="nav-links">
+                <li><a href="../index.html">首页</a></li>
+                <li><a href="../index.html#team-members">团队成员</a></li>
+                <li><a href="../index.html#final-project">最终项目</a></li>
+                <li><a href="../index.html#course-practice">课程实践</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="member-detail">
+        <a href="../index.html#team-members" class="back-btn">← 返回团队列表</a>
+        
+        <div class="member-header">
+            <div class="member-avatar">钱</div>
+            <h1 class="member-name">钱七</h1>
+            <p class="member-role">数据分析师</p>
+            <p class="member-bio">
+                用数据说话，善于从海量数据中发现价值。相信数据驱动决策的力量。
+            </p>
+            
+            <div class="contact-links">
+                <a href="#" class="contact-link">GitHub</a>
+                <a href="#" class="contact-link">Kaggle</a>
+                <a href="mailto:qianqi@lifeteam.com" class="contact-link">发送邮件</a>
+            </div>
+        </div>
+
+        <div class="member-section">
+            <h3>🎯 技能专长</h3>
+            <div class="skills-grid">
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">R</span>
+                <span class="skill-tag">SQL</span>
+                <span class="skill-tag">Pandas</span>
+                <span class="skill-tag">NumPy</span>
+                <span class="skill-tag">Tableau</span>
+                <span class="skill-tag">机器学习</span>
+                <span class="skill-tag">数据可视化</span>
+            </div>
+        </div>
+
+        <div class="member-section">
+            <h3>📚 个人简介</h3>
+            <div style="line-height: 1.8; color: var(--text-light);">
+                <p>我是钱七，一名数据分析师。我热爱探索数据背后的故事，用数据驱动业务增长。</p>
+                <p>在团队中，我负责数据分析、用户行为研究和业务洞察报告。</p>
+                <p>闲暇时喜欢参加 Kaggle 比赛，也热衷于分享数据分析的经验和技巧。</p>
+            </div>
+        </div>
+
+        <div class="member-section">
+            <h3>💼 项目经历</h3>
+            <div class="timeline-item"><h4>用户行为分析系统</h4><p>构建了完整的用户行为追踪和分析体系，为产品优化提供了数据支持。</p></div>
+            <div class="timeline-item"><h4>销售预测模型</h4><p>使用时间序列分析和机器学习算法，将预测准确率提升至 85% 以上。</p></div>
+            <div class="timeline-item"><h4>A/B 测试平台</h4><p>设计并实施了多轮 A/B 测试，帮助产品团队做出更明智的决策。</p></div>
+        </div>
+
+        <div class="member-section">
+            <h3>💡 座右铭</h3>
+            <div style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); color: var(--white); padding: 30px; border-radius: 12px; font-style: italic; font-size: 1.1rem; text-align: center;">
+                "数据不会说谎，但需要正确的解读。"
+            </div>
+        </div>
+    </main>
+
+    <footer><p>&copy; 2024 LifeTeam. All rights reserved.</p></footer>
+</body>
+</html>
