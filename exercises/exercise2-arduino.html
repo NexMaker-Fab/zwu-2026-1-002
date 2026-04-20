@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 2: Arduino Basics & Running Light - Jowywlz</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../index.html" class="logo">Jowywlz</a>
+            <div class="nav-links">
+                <a href="../index.html">Home</a>
+                <a href="../members/index.html">Team Members</a>
+                <a href="exercises.html" class="active">Course Exercises</a>
+                <a href="../project.html">Final Project</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <h1 style="text-align: center; margin-bottom: 40px;">Exercise 2: Arduino Basics & Running Light</h1>
+        
+        <!-- Section 1: Introduction to Arduino -->
+        <section class="card">
+            <h2>1. Learning Open-Source Hardware - Arduino</h2>
+            <img src="../images/exercises/图片1.png" alt="Arduino Board" style="width: 100%; max-width: 600px; margin: 20px auto; display: block; border-radius: 8px;">
+            
+            <p>Arduino is an open-source electronic prototyping platform that includes hardware (various models of Arduino development boards) and software (Arduino IDE). Its core advantages are:</p>
+            
+            <ul style="line-height: 2; margin-left: 20px;">
+                <li><strong>Open Source & Free:</strong> Hardware design, software code, and schematics are all open source, allowing free modification and secondary development</li>
+                <li><strong>Low Barrier to Entry:</strong> Uses simplified C/C++ syntax, no need to delve into microcontroller low-level details, beginners can get started quickly</li>
+                <li><strong>Strong Ecosystem:</strong> Massive open-source libraries, sensor modules, and project cases worldwide, capable of realizing almost all electronic creativity</li>
+            </ul>
+            
+            <h3 style="margin-top: 20px;">Common Application Scenarios:</h3>
+            <ul style="line-height: 2; margin-left: 20px;">
+                <li><strong>Teaching & Learning:</strong> Programming basics (C/C++, logic training), electronics basics (sensors, LEDs, motors, circuits), school courses, graduation projects</li>
+                <li><strong>Smart Home:</strong> Smart lighting, environmental monitoring, automatic control, safety alerts</li>
+                <li><strong>Interactive Art & Installations:</strong> Interactive light shows, new media art installations, stage/exhibition effects</li>
+                <li><strong>DIY Electronics:</strong> Electronic clocks, thermometers, Bluetooth/IR remote switches, wireless doorbells, simple 3D printers</li>
+                <li><strong>Industrial/Lab Applications:</strong> Data collection, simple automation control, IoT nodes</li>
+            </ul>
+        </section>
+
+        <!-- Section 2: Arduino IDE -->
+        <section class="card">
+            <h2>2. Arduino IDE</h2>
+            
+            <h3>(1) Introduction</h3>
+            <p>Arduino IDE is an integrated development environment for writing, uploading, and debugging programs based on the Arduino platform. It's an open-source tool that runs on Windows, Mac OS X, and Linux systems. It uses C/C++ language for coding, features a simple graphical interface, and includes a built-in code editor, compiler, uploader, and serial monitor.</p>
+            
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; margin: 20px 0;">
+                <img src="../images/exercises/图片2.png" alt="IDE Interface 1" style="width: 100%; border-radius: 8px;">
+                <img src="../images/exercises/图片3.png" alt="IDE Interface 2" style="width: 100%; border-radius: 8px;">
+                <img src="../images/exercises/图片4.png" alt="IDE Interface 3" style="width: 100%; border-radius: 8px;">
+                <img src="../images/exercises/图片5.png" alt="IDE Interface 4" style="width: 100%; border-radius: 8px;">
+            </div>
+            
+            <h3>(2) Coding Methods</h3>
+            <ul style="line-height: 2; margin-left: 20px;">
+                <li><strong>Program Structure:</strong> All Arduino programs contain two core functions. <code>setup()</code> runs only once at startup for initialization; <code>loop()</code> runs infinitely after setup for core logic.</li>
+                <li><strong>Comments:</strong> Single-line comments use <code>//</code>, multi-line comments use <code>/* */</code>.</li>
+                <li><strong>Variables:</strong> Supports int, float, char, boolean types. Variable names must start with a letter.</li>
+                <li><strong>Pin Operations:</strong> Core of hardware interaction. Use <code>pinMode()</code> to set pin mode, <code>digitalRead()</code> to read pin state, <code>digitalWrite()</code> to control pin output.</li>
+                <li><strong>Custom Functions:</strong> Create custom functions to encapsulate code logic.</li>
+                <li><strong>Library Files:</strong> Import official/third-party libraries via <code>#include</code> for quick implementation of servo control, I2C communication, sensor drivers, etc.</li>
+                <li><strong>Serial Communication:</strong> Use Serial object for board-computer data interaction. <code>Serial.begin()</code> initializes serial, <code>Serial.print()</code> sends data for debugging.</li>
+            </ul>
+            
+            <h3>(3) Hardware Connection</h3>
+            <ul style="line-height: 2; margin-left: 20px;">
+                <li><strong>Board Connection:</strong> Connect Arduino board to computer via USB cable for program upload, serial communication, and basic power supply.</li>
+                <li><strong>External Circuit Connection:</strong> Connect sensors, LEDs, buttons via jumper wires to digital/analog pins. Must correctly distinguish VCC, GND, and signal lines. LEDs need 220Ω current-limiting resistors.</li>
+                <li><strong>Power Supply:</strong> High-power components like motors, large LEDs, servos need external battery or power adapter to avoid board damage.</li>
+                <li><strong>Program Upload:</strong> After coding and debugging in IDE, select corresponding board model and COM port, then upload program with one click.</li>
+                <li><strong>Debugging & Testing:</strong> After upload, view Serial output data in serial monitor to verify sensor values, pin states, and program logic.</li>
+            </ul>
+        </section>
+
+        <!-- Section 3: Running Light Program -->
+        <section class="card">
+            <h2>3. Running Light Program</h2>
+            
+            <h3>Running Light Implementation Code</h3>
+            <pre style="background-color: #f5f5f5; padding: 20px; border-radius: 8px; overflow-x: auto; font-family: 'Courier New', monospace; line-height: 1.6;"><code>// Define LED pins: 2, 3, 4, 5, 6, 7
+int ledPins[] = {2, 3, 4, 5, 6, 7};
+int ledCount = 6;
+
+void setup() {
+  // Initialize all pins as output mode
+  for (int i = 0; i < ledCount; i++) {
+    pinMode(ledPins[i], OUTPUT);
+  }
+}
+
+void loop() {
+  // Light up from left to right
+  for (int i = 0; i < ledCount; i++) {
+    digitalWrite(ledPins[i], HIGH);
+    delay(150);
+    digitalWrite(ledPins[i], LOW);
+  }
+
+  // Light up from right to left
+  for (int i = ledCount - 2; i > 0; i--) {
+    digitalWrite(ledPins[i], HIGH);
+    delay(150);
+    digitalWrite(ledPins[i], LOW);
+  }
+}</code></pre>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 15px; margin: 20px 0;">
+                <img src="../images/exercises/图片6.png" alt="Running Light Circuit" style="width: 100%; border-radius: 8px;">
+                <img src="../images/exercises/图片7.png" alt="Running Light Effect" style="width: 100%; border-radius: 8px;">
+            </div>
+        </section>
+
+        <!-- Section 4: Case Studies -->
+        <section class="card">
+            <h2>4. Case Studies</h2>
+            
+            <h3>Case 1: "Emotion Aid" Project</h3>
+            <img src="../images/exercises/图片8.png" alt="Emotion Aid Device" style="width: 100%; max-width: 600px; margin: 20px auto; display: block; border-radius: 8px;">
+            
+            <p><strong>Case Link:</strong> <a href="https://blog.arduino.cc/2023/05/19/the-emotion-aid-is-a-wearable-device-that-communicates-the-users-emotions/#respond" target="_blank" style="color: var(--primary-color);">Arduino Blog - Emotion Aid</a></p>
+            
+            <ul style="line-height: 2; margin-left: 20px;">
+                <li><strong>Core Objective:</strong> Help people with communication barriers (especially autism spectrum) convey their emotional states to the outside world using devices instead of body language.</li>
+                <li><strong>Hardware Architecture:</strong> Arduino Uno Rev3 + Capacitive humidity sensor (EDA/GSR) + Temperature sensor + Pulse sensor + 9V battery power supply.</li>
+                <li><strong>Output Method:</strong> Small servo drives a fan-like device, changing its form to express emotions through intuitive physical "fanning" motions.</li>
+            </ul>
+            
+            <h4 style="margin-top: 15px;">Advantages:</h4>
+            <ol style="line-height: 2; margin-left: 20px;">
+                <li><strong>Novel & Intuitive Output:</strong> Uses pure physical motion to express emotions rather than screens or lights, more friendly to sensory-sensitive individuals.</li>
+                <li><strong>Multi-modal Signal Fusion:</strong> Integrates EDA, body temperature, and heart rate signals, using "multi-modal fusion" to improve emotion inference robustness.</li>
+                <li><strong>Open Source & Community Friendly:</strong> Complete course design with code, circuit diagrams, and structural designs fully open-sourced on Instructables.</li>
+            </ol>
+            
+            <h4 style="margin-top: 15px;">Disadvantages:</h4>
+            <ol style="line-height: 2; margin-left: 20px;">
+                <li><strong>Oversimplified Emotion Inference:</strong> Inferring complex human emotions solely from EDA, heart rate, and temperature is scientifically difficult and unrealistic.</li>
+                <li><strong>Rough Data Fusion:</strong> No effective noise reduction or feature extraction. Motion artifacts severely interfere with signals, ignoring individual physiological baseline differences.</li>
+                <li><strong>Suboptimal Wearing Position:</strong> Attached to underwear limits gender applicability and is greatly affected by breathing and body movement.</li>
+                <li><strong>Battery & Durability Issues:</strong> 9V battery has limited capacity, difficult to support long-term use and servo current requirements.</li>
+                <li><strong>Risk of Emotional Labeling:</strong> Emotions are crudely simplified into single modes. Wrong judgments may transmit incorrect information, causing social misunderstandings.</li>
+            </ol>
+            
+            <hr style="margin: 30px 0; border: none; border-top: 2px solid var(--color-border);">
+            
+            <h3>Case 2: UESTC Professor Xu Peng's Team - "Wireless Brain Function Assessment System"</h3>
+            
+            <p><strong>Case Link:</strong> <a href="https://www.new1.uestc.edu.cn/?n=UestcNews.Front.DocumentV2.ArticlePage&Id=96164" target="_blank" style="color: var(--primary-color);">UESTC News - Brain Function Assessment</a></p>
+            
+            <ul style="line-height: 2; margin-left: 20px;">
+                <li><strong>Core Objective:</strong> Provide objective, quantitative auxiliary diagnosis and precise intervention solutions for autism, benefiting over 3,000 children domestically and internationally.</li>
+                <li><strong>Hardware Architecture:</strong> Based on wireless dry-electrode EEG cap (non-invasive) and targeted transcranial magnetic stimulator, no conductive gel required.</li>
+                <li><strong>Core Technology:</strong> Auxiliary diagnosis uses AI algorithms (deep learning, transfer learning) to identify brain network abnormalities (accuracy >90%); intervention precisely locates superficial nodes to indirectly regulate deep brain regions.</li>
+            </ul>
+            
+            <h4 style="margin-top: 15px;">Advantages:</h4>
+            <ol style="line-height: 2; margin-left: 20px;">
+                <li><strong>Pioneered "Quantitative Diagnosis" Paradigm:</strong> Combines EEG signals with AI algorithms, transforming diagnosis from experience-based "qualitative judgment" to data-supported "quantitative diagnosis".</li>
+                <li><strong>"High Friendliness" Experience:</strong> Wireless dry-electrode EEG cap for diagnosis, short-duration treatment mode (3 times daily, 40 seconds each), greatly improving comfort and cooperation.</li>
+                <li><strong>"Deep Brain Region" Intervention Possibility:</strong> Targeted transcranial magnetic therapy indirectly regulates deep brain regions through superficial "relay stations", achieving over 80% effectiveness.</li>
+            </ol>
+            
+            <h4 style="margin-top: 15px;">Disadvantages:</h4>
+            <ol style="line-height: 2; margin-left: 20px;">
+                <li><strong>High Technical Threshold & Cost:</strong> BCI and TMS equipment R&D and manufacturing costs are high, mainly targeting tertiary hospitals or professional rehabilitation institutions in the short term.</li>
+                <li><strong>Physiological Signal Limitations:</strong> EEG signals have low signal-to-noise ratio, susceptible to interference. Post-processing and AI model training require extremely high algorithm standards.</li>
+                <li><strong>Institutional Application Limitations:</strong> The entire system requires professional venue operation, difficult to serve as home daily intervention equipment.</li>
+                <li><strong>Long-term Safety & Effectiveness Pending Verification:</strong> Although effectiveness exceeds 80%, this evaluation mostly stems from short-term clinical observations.</li>
+                <li><strong>"Black Box" Problem:</strong> AI algorithm decision logic is opaque to humans. Doctors find it difficult to judge specific basis for AI conclusions, increasing diagnosis review difficulty.</li>
+            </ol>
+        </section>
+
+        <div style="text-align: center; margin-top: 30px;">
+            <a href="../exercises.html" class="btn">← Back to Exercise List</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Jowywlz Team. All rights reserved.</p>
+    </footer>
+</body>
+</html>
