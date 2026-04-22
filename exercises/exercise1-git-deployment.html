@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 1: Git Installation to Team Website Deployment - Jowywlz</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../index.html" class="logo">Jowywlz</a>
+            <div class="nav-links">
+                <a href="../index.html">Home</a>
+                <a href="../members/index.html">Team Members</a>
+                <a href="exercises.html" class="active">Course Exercises</a>
+                <a href="../project.html">Final Project</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <h1 style="text-align: center; margin-bottom: 40px;">Practice Record: From Git Installation to Team Website Deployment</h1>
+
+        <!-- Step 1 -->
+        <section class="card">
+            <h2>Step 1: Download and Install Git</h2>
+            
+            <h3>Instructions</h3>
+            <p>First, you need to download the installation package suitable for Windows system from the official Git website.</p>
+            
+            <ol style="line-height: 2; margin-left: 20px;">
+                <li>Open your browser and visit the Git official website: <a href="https://git-scm.com/" target="_blank" style="color: var(--primary-color);">https://git-scm.com/</a></li>
+            </ol>
+            
+            <img src="../images/exercises/图片9.png" alt="Git Official Website" style="width: 100%; max-width: 800px; margin: 20px auto; display: block; border-radius: 8px;">
+            
+            <ol start="2" style="line-height: 2; margin-left: 20px;">
+                <li>Click the "Download for Windows" button</li>
+            </ol>
+            
+            <img src="../images/exercises/图片10.png" alt="Download Button" style="width: 100%; max-width: 800px; margin: 20px auto; display: block; border-radius: 8px;">
+            
+            <ol start="3" style="line-height: 2; margin-left: 20px;">
+                <li>After downloading, double-click to run the installer</li>
+                <li>Follow the wizard prompts to install (recommended to use default settings)</li>
+            </ol>
+        </section>
+
+        <!-- Step 2 -->
+        <section class="card">
+            <h2>Step 2: Create Repository on GitHub</h2>
+            
+            <h3>Instructions</h3>
+            <ol style="line-height: 2; margin-left: 20px;">
+                <li>Visit <a href="https://github.com/" target="_blank" style="color: var(--primary-color);">https://github.com/</a> and register an account (if you don't have one yet)</li>
+                <li>After logging in, click the "+" sign in the upper right corner and select "New repository"</li>
+            </ol>
+            
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; margin: 20px 0;">
+                <img src="../images/exercises/图片11.png" alt="Create Repository Step 1" style="width: 100%; border-radius: 8px;">
+                <img src="../images/exercises/图片12.png" alt="Create Repository Step 2" style="width: 100%; border-radius: 8px;">
+            </div>
+            
+            <ol start="3" style="line-height: 2; margin-left: 20px;">
+                <li>Fill in repository information:</li>
+            </ol>
+            
+            <img src="../images/exercises/图片13.png" alt="Repository Information" style="width: 100%; max-width: 800px; margin: 20px auto; display: block; border-radius: 8px;">
+            
+            <ul style="line-height: 2; margin-left: 20px;">
+                <li><strong>Repository name:</strong> Enter repository name (e.g., zwu-2026-1-002)</li>
+                <li><strong>Description:</strong> Optional, add repository description</li>
+                <li><strong>Public/Private:</strong> Choose public or private</li>
+            </ul>
+            
+            <ol start="4" style="line-height: 2; margin-left: 20px;">
+                <li><strong>Important:</strong> Do NOT check "Initialize this repository with a README" (because we want to upload existing local code)</li>
+                <li>Click "Create repository" button</li>
+            </ol>
+        </section>
+
+        <!-- Step 3 -->
+        <section class="card">
+            <h2>Step 3: Initialize Local Git Repository and Commit Code</h2>
+            
+            <h3>Instructions</h3>
+            <p>Initialize Git in the project folder and commit all files to the local repository.</p>
+            
+            <pre style="background-color: #f5f5f5; padding: 20px; border-radius: 8px; overflow-x: auto; font-family: 'Courier New', monospace; line-height: 1.6;"><code># Enter project directory
+cd "d:\Desktop\ZWU2026\Team"
+
+# Initialize Git repository
+git init
+
+# Create .gitignore file
+echo ".lingma/" > .gitignore
+
+# Add all files to staging area
+git add .
+
+# Commit changes
+git commit -m "Initial commit: LifeTeam website"</code></pre>
+        </section>
+
+        <!-- Step 4 -->
+        <section class="card">
+            <h2>Step 4: Associate Remote Repository and Push Code</h2>
+            
+            <h3>Instructions</h3>
+            <p>Associate the local Git repository with the remote repository on GitHub, then push the code.</p>
+            
+            <pre style="background-color: #f5f5f5; padding: 20px; border-radius: 8px; overflow-x: auto; font-family: 'Courier New', monospace; line-height: 1.6;"><code># Associate remote repository (replace with your repository address)
+git remote add origin https://github.com/NexMaker-Fab/zwu-2026-1-002.git
+
+# Push code to GitHub
+git push -u origin main</code></pre>
+            
+            <div style="background-color: #fff3cd; border-left: 4px solid #ffc107; padding: 15px; margin-top: 20px; border-radius: 4px;">
+                <h4 style="margin-top: 0; color: #856404;">⚠️ Important Reminder</h4>
+                <p style="margin: 0; color: #856404;"><strong>Avoid using the --force parameter!</strong> This will overwrite the remote repository's history and may cause others' work to be lost. Unless you are sure this is the correct operation.</p>
+            </div>
+        </section>
+
+        <!-- Step 5 -->
+        <section class="card">
+            <h2>Step 5: Enable GitHub Pages to Deploy Website</h2>
+            
+            <h3>Instructions</h3>
+            <ol style="line-height: 2; margin-left: 20px;">
+                <li>Visit your GitHub repository page</li>
+                <li>Click the Settings tab at the top</li>
+                <li>Find and click "Pages" in the left menu</li>
+            </ol>
+            
+            <img src="../images/exercises/图片14.png" alt="GitHub Pages Settings" style="width: 100%; max-width: 800px; margin: 20px auto; display: block; border-radius: 8px;">
+            
+            <ol start="4" style="line-height: 2; margin-left: 20px;">
+                <li>In the "Build and deployment" section:
+                    <ul style="margin-top: 10px;">
+                        <li><strong>Source:</strong> Select "Deploy from a branch"</li>
+                        <li><strong>Branch:</strong> Select "main"</li>
+                        <li><strong>Folder:</strong> Select "/ (root)"</li>
+                    </ul>
+                </li>
+                <li>Click Save button</li>
+                <li>Wait 1-2 minutes, the website will be published</li>
+            </ol>
+            
+            <h3 style="margin-top: 30px;">Access Your Website</h3>
+            <p>After successful deployment, your website can be accessed via the following URL:</p>
+            
+            <img src="../images/exercises/图片15.png" alt="Website URL" style="width: 100%; max-width: 800px; margin: 20px auto; display: block; border-radius: 8px;">
+            
+            <p style="text-align: center; font-size: 1.1rem;">
+                <a href="https://nexmaker-fab.github.io/zwu-2026-1-002/" target="_blank" style="color: var(--primary-color); font-weight: bold;">https://nexmaker-fab.github.io/zwu-2026-1-002/</a>
+            </p>
+        </section>
+
+        <!-- Step 6 -->
+        <section class="card">
+            <h2>Step 6: Solve CSS Style Loading Issues</h2>
+            
+            <h3>Problem Description</h3>
+            <p>After uploading to GitHub Pages, the website's CSS styles did not load correctly, and the page displayed as pure HTML without any styling.</p>
+            
+            <div style="background-color: #f8d7da; border-left: 4px solid #dc3545; padding: 15px; margin: 20px 0; border-radius: 4px;">
+                <h4 style="margin-top: 0; color: #721c24;">Problem: CSS File 404 Error</h4>
+                <p style="margin: 10px 0; color: #721c24;"><strong>Symptom:</strong> Press F12 to open developer tools, and see style.css returning 404 error in the Network tab.</p>
+                <p style="margin: 10px 0; color: #721c24;"><strong>Cause:</strong> GitHub Pages URL includes a subpath (/zwu-2026-1-002/), while relative paths are used in HTML, causing the browser to fail to find the CSS file.</p>
+            </div>
+            
+            <h3>Solution</h3>
+            <p>Add a <code>&lt;base&gt;</code> tag in the <code>&lt;head&gt;</code> section of all HTML files:</p>
+            
+            <pre style="background-color: #f5f5f5; padding: 20px; border-radius: 8px; overflow-x: auto; font-family: 'Courier New', monospace; line-height: 1.6;"><code>&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;base href="/zwu-2026-1-002/"&gt;
+    &lt;title&gt;LifeTeam - Team Homepage&lt;/title&gt;
+    &lt;link rel="stylesheet" href="css/style.css"&gt;
+&lt;/head&gt;</code></pre>
+            
+            <p>This way, all relative paths will automatically be based on the <code>/zwu-2026-1-002/</code> base path.</p>
+        </section>
+
+        <!-- Step 7 -->
+        <section class="card">
+            <h2>Step 7: Use Lingma AI Assistant to Create Team Website</h2>
+            
+            <h3>Instructions</h3>
+            <p>Use Lingma AI programming assistant to quickly generate team website code.</p>
+            
+            <ol style="line-height: 2; margin-left: 20px;">
+                <li><strong>Describe Requirements:</strong> Tell Lingma that you want to create a team showcase website, including:
+                    <ul style="margin-top: 10px;">
+                        <li>Team introduction</li>
+                        <li>Team member showcase</li>
+                        <li>Final project showcase</li>
+                        <li>Course practice records</li>
+                    </ul>
+                </li>
+            </ol>
+            
+            <img src="../images/exercises/图片16.png" alt="Describe Requirements to Lingma" style="width: 100%; max-width: 800px; margin: 20px auto; display: block; border-radius: 8px;">
+            
+            <ol start="2" style="line-height: 2; margin-left: 20px;">
+                <li><strong>Generate Code:</strong> Lingma will automatically generate HTML, CSS, and JavaScript code</li>
+                <li><strong>Save Files:</strong> Save the generated code to the project folder</li>
+                <li><strong>Test and Debug:</strong> Open index.html in local browser to view the effect</li>
+                <li><strong>Iterate and Optimize:</strong> Adjust content and style according to requirements</li>
+            </ol>
+            
+            <h3 style="margin-top: 30px;">Usage Tips</h3>
+            <ul style="line-height: 2; margin-left: 20px;">
+                <li>Describe your requirements in as much detail as possible, including features, styles, layouts, etc.</li>
+                <li>You can ask Lingma to generate code for different parts step by step</li>
+                <li>When encountering problems, send the error message directly to Lingma, and it will help you solve it. Remember to select "Agent" mode</li>
+                <li>You can ask Lingma to help optimize code or add new features, including helping you upload the website to GitHub</li>
+            </ul>
+            
+            <img src="../images/exercises/图片17.png" alt="Lingma Usage Tips" style="width: 100%; max-width: 800px; margin: 20px auto; display: block; border-radius: 8px;">
+            
+            <div style="background-color: #d1ecf1; border-left: 4px solid #0c5460; padding: 15px; margin-top: 20px; border-radius: 4px;">
+                <p style="margin: 0; color: #0c5460;"><strong>Note:</strong> Remember to clone the repository in the terminal first before asking Lingma to upload.</p>
+            </div>
+        </section>
+
+        <!-- Summary -->
+        <section class="card">
+            <h2>Summary and Learnings</h2>
+            
+            <h3>Completed Work</h3>
+            <ul style="line-height: 2; margin-left: 20px;">
+                <li>✅ Successfully installed and configured Git</li>
+                <li>✅ Created repository on GitHub</li>
+                <li>✅ Uploaded local code to GitHub</li>
+                <li>✅ Enabled GitHub Pages to deploy website</li>
+                <li>✅ Solved CSS path issues</li>
+                <li>✅ Used Lingma AI assistant to create team website</li>
+            </ul>
+            
+            <h3 style="margin-top: 30px;">Knowledge Gained</h3>
+            <ul style="line-height: 2; margin-left: 20px;">
+                <li>Basic Git operations: init, add, commit, push</li>
+                <li>Creating and managing GitHub repositories</li>
+                <li>Configuring and using GitHub Pages</li>
+                <li>Troubleshooting and solving HTML/CSS path issues</li>
+                <li>How to use AI assistants to improve development efficiency</li>
+            </ul>
+            
+            <h3 style="margin-top: 30px;">Next Steps</h3>
+            <ul style="line-height: 2; margin-left: 20px;">
+                <li>Continue to improve the content and functionality of the team website</li>
+                <li>Explore back-end development and database knowledge</li>
+            </ul>
+        </section>
+
+        <div style="text-align: center; margin-top: 30px;">
+            <a href="../exercises.html" class="btn">← Back to Exercise List</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Jowywlz Team. All rights reserved.</p>
+    </footer>
+</body>
+</html>
