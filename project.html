@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>期末项目 - Jowywlz</title>
+    <title>Final Project - Jowywlz</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -19,110 +19,235 @@
         </nav>
     </header>
 
-    <main>
-        <h1 style="text-align: center; margin-bottom: 40px;">期末项目</h1>
-        
-        <!-- 项目基本信息 -->
+    <main style="max-width: 1000px; margin: 0 auto; padding: 40px 20px;">
+        <h1 style="text-align: center; margin-bottom: 10px;">Final Project: Interactive Device for Autistic Children</h1>
+        <p style="text-align: center; color: var(--color-text-light); margin-bottom: 40px;">Literature Review & Conceptual Design</p>
+
+        <!-- Introduction -->
         <section class="card">
-            <!-- 替换：修改项目名称 -->
-            <h2>项目名称（占位）</h2>
+            <h2>Project Overview</h2>
+            <p>Our design aims to support autistic children through fun interactive cognitive training, utilizing multi-sensory feedback (visual, tactile, emotional) to enhance concentration and alleviate anxiety.</p>
             
-            <!-- 替换：填写项目简介 -->
-            <p>在这里描述您的期末项目的整体情况，包括项目目标、技术栈和预期成果。</p>
-            <p>可以详细说明项目的背景、解决的问题以及创新点。</p>
-            
-            <!-- 技术栈标签 -->
-            <div style="margin-top: 20px;">
-                <h3 style="margin-bottom: 10px;">技术栈</h3>
-                <!-- 替换：修改为实际使用的技术 -->
-                <span class="tag">HTML5</span>
-                <span class="tag">CSS3</span>
-                <span class="tag">JavaScript</span>
-                <span class="tag">React</span>
-                <span class="tag">Node.js</span>
-                <!-- 继续添加更多技术标签... -->
+            <div style="background-color: #e7f3ff; border-left: 4px solid #2196F3; padding: 15px; margin: 20px 0; border-radius: 4px;">
+                <h4 style="margin-top: 0; color: #0d47a1;">Design Purpose:</h4>
+                <ul style="line-height: 2; margin-left: 20px; color: #0d47a1;">
+                    <li>Targeting autistic children</li>
+                    <li>Conduct cognitive training through fun interaction</li>
+                    <li>Enhance concentration via multi-sensory feedback</li>
+                    <li>Alleviate anxiety and coordinate limbs</li>
+                </ul>
             </div>
         </section>
 
-        <!-- 项目截图 -->
+        <!-- Literature Review -->
         <section class="card">
-            <h2>项目截图</h2>
-            <!-- 替换：将占位图换成真实的项目截图 -->
-            <div class="placeholder-img placeholder-img-medium" style="margin-bottom: 15px;">
-                <span>项目截图 1</span>
+            <h2>Literature Review</h2>
+            <p>We reviewed 8 research papers on interactive devices and rehabilitation design for autistic children:</p>
+
+            <!-- Paper 1 -->
+            <h3 style="margin-top: 30px;">Paper 1: Application Research of Interactive Installations in Auxiliary Treatment and Education for Autistic Children</h3>
+            <p><strong>Source:</strong> <a href="https://d.wanfangdata.com.cn/periodical/mysd-s202101035" target="_blank" style="color: var(--primary-color);">https://d.wanfangdata.com.cn/periodical/mysd-s202101035</a></p>
+            
+            <div style="background-color: #f5f5f5; padding: 15px; border-radius: 8px; margin: 15px 0;">
+                <p><strong>Key Points:</strong></p>
+                <ul style="line-height: 2; margin-left: 20px;">
+                    <li>Autistic children are attracted to sensory stimuli like light, shadows, and bright colors</li>
+                    <li>Interactive installations use lights, sounds, and touch to attract attention</li>
+                    <li>Through play, they gradually improve focus, reduce unusual behaviors, and learn social interaction</li>
+                    <li>Design principles from mature international devices: rounded shapes, cool colors, diverse materials, simple operation, immediate audio-visual feedback</li>
+                    <li>Author created a line-tracing device: lights up when correct path is traced, supports two-player interaction</li>
+                </ul>
             </div>
-            <div class="placeholder-img placeholder-img-medium">
-                <span>项目截图 2</span>
+
+            <!-- Paper 2 -->
+            <h3 style="margin-top: 30px;">Paper 2: Spatial Design of Rehabilitation Environment for Autistic Children: Exploration from Behavioral and Psychological Perspectives</h3>
+            <p><strong>Source:</strong> <a href="https://k.vipslib.com/asset/web_searchingDetail?id=2031564955350" target="_blank" style="color: var(--primary-color);">View Paper</a></p>
+            
+            <div style="background-color: #f5f5f5; padding: 15px; border-radius: 8px; margin: 15px 0;">
+                <p><strong>Key Points:</strong></p>
+                <ul style="line-height: 2; margin-left: 20px;">
+                    <li>Autistic children fear noise and strong light; environmental changes cause anxiety</li>
+                    <li>Rehabilitation room design: soft lighting, sound insulation, stable furniture placement, avoid stimulation sources</li>
+                    <li>Stabilize children's emotions through environment control</li>
+                    <li>Zoned spaces: private corners for solitude and interactive areas for play</li>
+                    <li>Future direction: intelligent, personalized environments that adjust in real-time based on each child's state</li>
+                </ul>
+            </div>
+
+            <!-- Paper 3 -->
+            <h3 style="margin-top: 30px;">Paper 3: Research Review on Multi-Sensory Design Intervention for Emotional Improvement in Autistic Children</h3>
+            <p><strong>Source:</strong> <a href="https://k.vipslib.com/asset/web_searchingDetail?id=2031644122112" target="_blank" style="color: var(--primary-color);">View Paper</a></p>
+            
+            <div style="background-color: #f5f5f5; padding: 15px; border-radius: 8px; margin: 15px 0;">
+                <p><strong>Key Points:</strong></p>
+                <ul style="line-height: 2; margin-left: 20px;">
+                    <li>Autistic children struggle with emotion recognition, fear audio-visual stimuli, lack social skills</li>
+                    <li>Traditional single-sensory training has poor effectiveness</li>
+                    <li>This product combines visual, auditory, and tactile senses with emotional design</li>
+                    <li>Collects physiological data and provides real-time emotional feedback</li>
+                    <li>Examples: VR scenarios, smart tactile clothing, interactive toys, brain-computer interfaces</li>
+                    <li>Uses light/shadow, vibration, and sound effects to help children perceive emotions</li>
+                    <li>Future: personalized smart devices balancing cost, privacy, avoiding over-dependence on machines</li>
+                </ul>
+            </div>
+
+            <!-- Paper 4 -->
+            <h3 style="margin-top: 30px;">Paper 4: Design of Deep Touch Pressure Smart Vest for Anxiety in Autistic Children</h3>
+            <p><strong>Source:</strong> <a href="https://k.vipslib.com/asset/web_searchingDetail?id=2031634492692" target="_blank" style="color: var(--primary-color);">View Paper</a></p>
+            
+            <div style="background-color: #f5f5f5; padding: 15px; border-radius: 8px; margin: 15px 0;">
+                <p><strong>Key Points:</strong></p>
+                <ul style="line-height: 2; margin-left: 20px;">
+                    <li>Focuses on designing an emotion-monitoring, deep-touch-pressure, and acupoint-massage smart vest</li>
+                    <li>Tactile soothing is an effective calming method</li>
+                    <li>Core capabilities: physiological monitoring and automatic pressure therapy</li>
+                    <li>Existing smart clothing focuses on social obstacle training; few products target anxiety relief</li>
+                    <li>Most have simple structures, lacking multi-module integrated design</li>
+                    <li>Three core technologies: anxiety recognition, DTP (Deep Touch Pressure therapy), acupoint massage</li>
+                    <li>Vest includes: physiological monitoring module, acupoint massage module, central control module, automatic air pump for precise pressure control</li>
+                </ul>
+            </div>
+
+            <!-- Paper 5 -->
+            <h3 style="margin-top: 30px;">Paper 5: Design of Multi-Sensory Cognitive Training Toys for Autistic Children Based on ABA Theory</h3>
+            <p><strong>Source:</strong> <a href="https://k.vipslib.com/asset/web_searchingDetail?id=2031595870687" target="_blank" style="color: var(--primary-color);">View Paper</a></p>
+            
+            <div style="background-color: #f5f5f5; padding: 15px; border-radius: 8px; margin: 15px 0;">
+                <p><strong>Key Points:</strong></p>
+                <ul style="line-height: 2; margin-left: 20px;">
+                    <li>Based on ABA (Applied Behavior Analysis) theory</li>
+                    <li>Targets social and perceptual development deficits in autistic children</li>
+                    <li>Cactus-shaped multi-sensory cognitive training toy</li>
+                    <li>Integrates ABA stimulus-response principle, DTT discrete trial teaching, and color psychology</li>
+                    <li>Uses warm/cool color grading training and positive rewards for behavioral intervention</li>
+                    <li>Main body: cactus bionic shape with multi-material, multi-size thorn-like protrusions</li>
+                    <li>Provides graded tactile stimulation from weak to strong</li>
+                    <li>Built-in LED lights for visual feedback</li>
+                    <li>Three-tier cognitive cards:初级实物识图 (basic object recognition), 中级色彩场景 (intermediate color scenes), 高级社交情景 (advanced social scenarios)</li>
+                    <li>Interaction logic: tactile + visual + voice multi-modal closed-loop interaction</li>
+                    <li>Correct operation triggers light reward; errors receive voice guidance</li>
+                    <li>Modular structure adapts to home, institutional rehabilitation, and social simulation scenarios</li>
+                </ul>
+            </div>
+
+            <!-- Paper 6 -->
+            <h3 style="margin-top: 30px;">Paper 6: VR Painting Therapy Design for Autistic Children from Embodied Cognition Perspective</h3>
+            <p><strong>Source:</strong> <a href="https://k.vipslib.com/asset/web_searchingDetail?id=2031638706845" target="_blank" style="color: var(--primary-color);">View Paper</a></p>
+            
+            <div style="background-color: #f5f5f5; padding: 15px; border-radius: 8px; margin: 15px 0;">
+                <p><strong>Key Points:</strong></p>
+                <ul style="line-height: 2; margin-left: 20px;">
+                    <li>Based on embodied cognition theory</li>
+                    <li>Addresses sensory sensitivity and social weakness in autistic children</li>
+                    <li>Combines advantages and disadvantages of traditional painting therapy</li>
+                    <li>Proposes VR painting therapy design solution</li>
+                    <li>VR advantages: immersive, safe, customizable, 3D interaction</li>
+                    <li>Paired with gesture devices, soft visuals, and multi-sensory interaction design</li>
+                    <li>Constructs complete therapy system, providing design reference for autism art rehabilitation</li>
+                </ul>
+            </div>
+
+            <!-- Paper 7 -->
+            <h3 style="margin-top: 30px;">Paper 7: Cultivating Motor-Social Abilities in Autistic Children Through Motion-Sensing Games: Effectiveness Study of Smart Device-Assisted Intervention</h3>
+            <p><strong>Source:</strong> <a href="https://k.vipslib.com/asset/web_searchingDetail?id=2031641016317" target="_blank" style="color: var(--primary-color);">View Paper</a></p>
+            
+            <div style="background-color: #f5f5f5; padding: 15px; border-radius: 8px; margin: 15px 0;">
+                <p><strong>Key Points:</strong></p>
+                <ul style="line-height: 2; margin-left: 20px;">
+                    <li>Selected 15 autistic children aged 6-10 for 12-week AR motion-sensing game intervention experiment</li>
+                    <li>Used PDMS-2 and SRS scales to compare data from motor and social dimensions</li>
+                    <li>Results: motion-sensing games significantly improved gross motor skills and overall social abilities</li>
+                    <li>Reduced stereotyped behaviors</li>
+                    <li>Only optimized visual-motor integration; limited effect on fine motor skills like grasping</li>
+                    <li>Confirmed AR motion-sensing as effective rehabilitation intervention method</li>
+                    <li>Future: optimize game content to strengthen fine motor training</li>
+                </ul>
+            </div>
+
+            <!-- Paper 8 -->
+            <h3 style="margin-top: 30px;">Paper 8: Research on Rehabilitation Space Design Strategies for Autistic Children Based on Five-Sense Healing Concept</h3>
+            <p><strong>Source:</strong> <a href="https://k.vipslib.com/asset/web_searchingDetail?id=2031644010779" target="_blank" style="color: var(--primary-color);">View Paper</a></p>
+            
+            <div style="background-color: #f5f5f5; padding: 15px; border-radius: 8px; margin: 15px 0;">
+                <p><strong>Key Points:</strong></p>
+                <ul style="line-height: 2; margin-left: 20px;">
+                    <li>Based on five-sense healing theory</li>
+                    <li>Addresses homogeneous rehabilitation spaces lacking local culture and emotional design</li>
+                    <li>Integrates traditional shadow puppetry intangible cultural heritage elements into space design</li>
+                    <li>Implements spatial strategies across five sensory dimensions: visual, auditory, tactile, olfactory, gustatory</li>
+                    <li>Visual healing: low-saturation cool-tone shadow puppetry colors</li>
+                    <li>Auditory-tactile linkage: shadow puppetry tactile modules linked with sound effects</li>
+                    <li>Olfactory environment: aromatic plants + seasonal spices</li>
+                    <li>Gustatory healing: interactive food education spaces</li>
+                    <li>Forms rehabilitation space design combining therapeutic function with traditional culture</li>
+                </ul>
             </div>
         </section>
 
-        <!-- 项目进度 -->
-        <section class="card">
-            <h2>项目进度</h2>
+        <!-- Conceptual Design -->
+        <section class="card" style="background-color: var(--color-sage-light);">
+            <h2>Our Conceptual Design</h2>
             
-            <div style="margin-bottom: 20px;">
-                <p style="margin-bottom: 5px;"><strong>需求分析</strong> - 已完成</p>
-                <div class="progress-bar">
-                    <div class="progress-fill" style="width: 100%;"></div>
-                </div>
+            <h3>Concept Device Description</h3>
+            <p>Our concept device integrates distance sensors and heart rate monitoring to create an engaging, therapeutic experience for autistic children:</p>
+            
+            <div style="background-color: white; padding: 20px; border-radius: 8px; margin: 20px 0;">
+                <h4 style="margin-top: 0;">Core Features:</h4>
+                <ol style="line-height: 2; margin-left: 20px;">
+                    <li><strong>Distance Sensor Line-Tracing:</strong> Children trace shapes or lines along grooves. Correct completion triggers positive light feedback, guiding hands-on practice to improve concentration.</li>
+                    <li><strong>Heart Rate Monitoring:</strong> Real-time monitoring via heart rate sensor. When children squeeze the light bulb, breathing effects display according to heartbeat speed, allowing observation of emotional fluctuations to adjust training rhythm.</li>
+                    <li><strong>Gamified Interaction:</strong> Reduces resistance through game-like interaction format.</li>
+                    <li><strong>Positive Reinforcement:</strong> Enhances concentration through positive incentives.</li>
+                </ol>
             </div>
             
-            <div style="margin-bottom: 20px;">
-                <p style="margin-bottom: 5px;"><strong>设计阶段</strong> - 进行中</p>
-                <div class="progress-bar">
-                    <div class="progress-fill" style="width: 75%;"></div>
-                </div>
+            <div style="background-color: #d4edda; border-left: 4px solid #28a745; padding: 15px; margin: 20px 0; border-radius: 4px;">
+                <h4 style="margin-top: 0; color: #155724;">Design Benefits:</h4>
+                <ul style="line-height: 2; margin-left: 20px; color: #155724;">
+                    <li>Alleviate anxiety</li>
+                    <li>Coordinate limbs</li>
+                    <li>Improve concentration</li>
+                    <li>Reduce resistance</li>
+                    <li>Positive reinforcement approach</li>
+                </ul>
             </div>
             
-            <div style="margin-bottom: 20px;">
-                <p style="margin-bottom: 5px;"><strong>开发阶段</strong> - 待开始</p>
-                <div class="progress-bar">
-                    <div class="progress-fill" style="width: 30%;"></div>
-                </div>
-            </div>
-            
-            <div style="margin-bottom: 20px;">
-                <p style="margin-bottom: 5px;"><strong>测试与优化</strong> - 待开始</p>
-                <div class="progress-bar">
-                    <div class="progress-fill" style="width: 0%;"></div>
-                </div>
-            </div>
+            <h3>Design Philosophy Integration</h3>
+            <p>Our design draws inspiration from the literature review:</p>
+            <ul style="line-height: 2; margin-left: 20px;">
+                <li><strong>From Paper 1:</strong> Line-tracing mechanism with immediate light feedback</li>
+                <li><strong>From Paper 2:</strong> Soft lighting and stable environment considerations</li>
+                <li><strong>From Paper 3:</strong> Multi-sensory integration (visual, tactile, emotional)</li>
+                <li><strong>From Paper 4:</strong> Physiological monitoring for emotion regulation</li>
+                <li><strong>From Paper 5:</strong> Positive reinforcement and graded difficulty levels</li>
+                <li><strong>From Paper 6:</strong> Safe, immersive interactive experience</li>
+                <li><strong>From Paper 7:</strong> Motor skill development through interactive play</li>
+                <li><strong>From Paper 8:</strong> Multi-sensory healing approach</li>
+            </ul>
         </section>
 
-        <!-- 团队成员分工 -->
+        <!-- Future Development -->
         <section class="card">
-            <h2>团队成员分工</h2>
-            <p>查看每个成员在项目中的具体职责和贡献：</p>
-            
-            <div style="margin-top: 20px;">
-                <div style="padding: 15px; border-left: 3px solid var(--primary-color); margin-bottom: 15px; background-color: #fafafa;">
-                    <h4 style="margin-bottom: 5px;">成员 1 - 前端开发</h4>
-                    <p style="font-size: 0.9rem; margin: 0;">负责网站首页设计和前端开发工作</p>
-                </div>
-                
-                <div style="padding: 15px; border-left: 3px solid var(--primary-color); margin-bottom: 15px; background-color: #fafafa;">
-                    <h4 style="margin-bottom: 5px;">成员 2 - 后端开发</h4>
-                    <p style="font-size: 0.9rem; margin: 0;">负责服务器端逻辑和数据库设计</p>
-                </div>
-                
-                <div style="padding: 15px; border-left: 3px solid var(--primary-color); margin-bottom: 15px; background-color: #fafafa;">
-                    <h4 style="margin-bottom: 5px;">成员 3 - UI/UX 设计师</h4>
-                    <p style="font-size: 0.9rem; margin: 0;">负责用户界面设计和用户体验优化</p>
-                </div>
-                
-                <!-- 继续添加其他成员的分工... -->
-            </div>
-            
+            <h2>Future Development Directions</h2>
+            <p>Based on our research, future improvements may include:</p>
+            <ul style="line-height: 2; margin-left: 20px;">
+                <li>Intelligent development: AI-driven personalized adaptation</li>
+                <li>Personalization: Adjust parameters based on individual child profiles</li>
+                <li>Cost control: Balance functionality with affordability</li>
+                <li>Privacy protection: Secure handling of physiological data</li>
+                <li>Avoid over-dependence: Ensure technology complements rather than replaces human interaction</li>
+                <li>Enhanced fine motor training: Address limitations identified in Paper 7</li>
+                <li>Multi-module integration: Learn from Paper 4's integrated design approach</li>
+            </ul>
+        </section>
+
+        <!-- Team Contribution -->
+        <section class="card">
+            <h2>Team Contribution</h2>
+            <p>This final project represents collaborative research and design work by the Jowywlz team. Each member contributed to literature review, conceptual design, and technical planning.</p>
             <div style="text-align: center; margin-top: 20px;">
-                <a href="members/index.html" class="btn btn-outline">查看团队详情</a>
+                <a href="members/index.html" class="btn btn-outline">Meet Our Team</a>
             </div>
-        </section>
-
-        <!-- GitHub 链接（可选） -->
-        <section class="card" style="text-align: center;">
-            <h2>项目链接</h2>
-            <p>访问我们的 GitHub 仓库查看更多代码和文档</p>
-            <a href="https://github.com/NexMaker-Fab/zwu-2026-1-002" class="btn" target="_blank">查看 GitHub</a>
         </section>
     </main>
 
