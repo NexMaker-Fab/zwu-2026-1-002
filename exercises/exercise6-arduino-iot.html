@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 6: Arduino IOT</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-content">
+            <a href="../index.html" class="logo">Jowywlz Team</a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../members.html">Members</a></li>
+                    <li><a href="../exercises.html">Exercises</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container" style="padding-top: 40px; padding-bottom: 40px;">
+        <section class="card">
+            <h1>Exercise 6: Arduino IOT</h1>
+            <p class="subtitle">IOT and Interaction</p>
+        </section>
+
+        <section class="card">
+            <h2>IOT Project Introduction</h2>
+            <h3>Smart Window Closer:</h3>
+            
+            <p>The smart window closer utilizes Internet of Things (IoT) technology to help users achieve automated control of windows, enhancing the comfort and safety of living environments. This system uses environmental sensors, intelligent control modules, and remote communication technology to monitor outdoor weather changes and indoor environmental conditions in real-time, automatically executing window opening or closing operations to prevent losses caused by sudden storms or human negligence.</p>
+            
+            <img src="../images/exercises/exercise6/pic109.png" alt="Smart Window Closer System Overview" style="width: 100%; max-width: 800px; margin: 20px auto; display: block; border-radius: 8px;">
+            
+            <p>In the smart window closer, multiple sensors are installed on the exterior or interior of windows to detect parameters such as raindrops, wind speed, light intensity, and indoor temperature and humidity. When the rain sensor detects rainfall or the wind speed sensor detects strong winds, the system immediately issues a window closing command. Meanwhile, indoor air quality sensors (such as CO₂ and PM2.5 sensors) can also be linked for control, automatically opening windows when ventilation is needed to achieve intelligent indoor environment regulation.</p>
+            
+            <p>The control center employs edge computing or cloud-based analysis to comprehensively evaluate sensor data and execute precise actions based on user-preset scene modes (such as away mode, sleep mode, rainy day mode, etc.). Additionally, the system supports linkage with smart door locks, security cameras, air conditioners, and other devices. For example, it can automatically close all windows and activate security alerts after leaving home, or automatically open windows to exhaust smoke during fire alarms, enhancing emergency response capabilities.</p>
+            
+            <img src="../images/exercises/exercise6/pic110.png" alt="Smart Window Closer Control Interface" style="width: 100%; max-width: 800px; margin: 20px auto; display: block; border-radius: 8px;">
+            
+            <p>Users can remotely check the window opening/closing status via mobile apps or voice assistants, and manually control the opening angle of each window at any time. The system also provides historical records and anomaly alert functions, allowing users to understand window operation status. Installation is flexible, suitable for both wired installations in newly renovated homes and wireless battery or solar-powered solutions for retrofitting older buildings.</p>
+            
+            <p>The advantages of the smart window closer include effectively preventing rainwater backflow, reducing air conditioning energy consumption, minimizing dust entry, and enhancing home security levels. It solves the inconvenience of traditional windows that rely on manual operation, making it particularly suitable for high-rise residences, villas, offices, and areas with frequent rain or sandstorms. Through intelligent decision-making and automated execution, this product not only improves quality of life but also provides practical solutions for energy conservation, environmental protection, and smart home construction.</p>
+        </section>
+
+        <section class="card">
+            <h2>Key Features:</h2>
+            <ul style="line-height: 2; font-size: 1.1em;">
+                <li><strong>Automated Control:</strong> Real-time monitoring and automatic window operation based on environmental conditions</li>
+                <li><strong>Multi-Sensor Integration:</strong> Rain, wind, light, temperature, humidity, and air quality sensors</li>
+                <li><strong>Smart Scene Modes:</strong> Away mode, sleep mode, rainy day mode, and customizable settings</li>
+                <li><strong>Device Linkage:</strong> Integration with smart locks, cameras, HVAC systems, and security devices</li>
+                <li><strong>Remote Control:</strong> Mobile app and voice assistant support for remote monitoring and control</li>
+                <li><strong>Emergency Response:</strong> Automatic window operation during fire alarms or other emergencies</li>
+                <li><strong>Flexible Installation:</strong> Supports both wired and wireless power solutions</li>
+                <li><strong>Energy Efficiency:</strong> Reduces HVAC energy consumption through intelligent climate control</li>
+            </ul>
+        </section>
+
+        <section class="card">
+            <h2>Technical Specifications:</h2>
+            <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+                <tr style="border-bottom: 1px solid #ddd;">
+                    <td style="padding: 12px; font-weight: bold;">Control Module</td>
+                    <td style="padding: 12px;">Arduino-based microcontroller with IoT connectivity</td>
+                </tr>
+                <tr style="border-bottom: 1px solid #ddd;">
+                    <td style="padding: 12px; font-weight: bold;">Sensors</td>
+                    <td style="padding: 12px;">Rain sensor, wind speed sensor, light sensor, temperature/humidity sensor, air quality sensor</td>
+                </tr>
+                <tr style="border-bottom: 1px solid #ddd;">
+                    <td style="padding: 12px; font-weight: bold;">Communication</td>
+                    <td style="padding: 12px;">Wi-Fi, Bluetooth, or Zigbee for remote connectivity</td>
+                </tr>
+                <tr style="border-bottom: 1px solid #ddd;">
+                    <td style="padding: 12px; font-weight: bold;">Power Supply</td>
+                    <td style="padding: 12px;">Wired AC adapter, battery backup, or solar panel options</td>
+                </tr>
+                <tr style="border-bottom: 1px solid #ddd;">
+                    <td style="padding: 12px; font-weight: bold;">Motor Type</td>
+                    <td style="padding: 12px;">Stepper motor or linear actuator for precise window control</td>
+                </tr>
+                <tr>
+                    <td style="padding: 12px; font-weight: bold;">User Interface</td>
+                    <td style="padding: 12px;">Mobile app (iOS/Android), voice assistant integration, physical buttons</td>
+                </tr>
+            </table>
+        </section>
+
+        <section class="card">
+            <h2>Application Scenarios:</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 20px 0;">
+                <div style="padding: 20px; background-color: #f5f5f5; border-radius: 8px;">
+                    <h4 style="margin-top: 0;">High-Rise Residences</h4>
+                    <p style="margin-bottom: 0;">Prevents rain damage and enhances safety in tall buildings where manual window operation is difficult.</p>
+                </div>
+                <div style="padding: 20px; background-color: #f5f5f5; border-radius: 8px;">
+                    <h4 style="margin-top: 0;">Villas & Luxury Homes</h4>
+                    <p style="margin-bottom: 0;">Integrates seamlessly with comprehensive smart home systems for premium living experience.</p>
+                </div>
+                <div style="padding: 20px; background-color: #f5f5f5; border-radius: 8px;">
+                    <h4 style="margin-top: 0;">Office Buildings</h4>
+                    <p style="margin-bottom: 0;">Improves energy efficiency and maintains optimal working environment automatically.</p>
+                </div>
+                <div style="padding: 20px; background-color: #f5f5f5; border-radius: 8px;">
+                    <h4 style="margin-top: 0;">Rainy/Windy Regions</h4>
+                    <p style="margin-bottom: 0;">Essential protection for areas with frequent storms, sandstorms, or extreme weather conditions.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2026 Jowywlz Team. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
