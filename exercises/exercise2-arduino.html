@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exercise 2: Arduino Basics & Running Light - Jowywlz</title>
+    <title>Exercise 2: Arduino - Jowywlz</title>
     <link rel="stylesheet" href="../css/style.css">
     <style>
         /* 代码高亮样式 */
@@ -47,42 +47,42 @@
     </header>
 
     <main style="max-width: 1000px; margin: 0 auto; padding: 40px 20px;">
-        <h1 style="text-align: center; margin-bottom: 10px;">Exercise 2: Arduino Basics & Running Light</h1>
-        <p style="text-align: center; color: var(--color-text-light); margin-bottom: 40px;">Learning Open Source Hardware - Arduino UNO R4 WiFi Development Board</p>
+        <h1 style="text-align: center; margin-bottom: 10px;">Exercise 2: Arduino</h1>
+        <p style="text-align: center; color: var(--color-text-light); margin-bottom: 40px;">Learning Open Source Hardware - Arduino</p>
 
-        <!-- Introduction -->
+        <!-- Section 1: Introduction -->
         <section class="card">
-            <h2>Introduction to Arduino</h2>
+            <h2>1. Learning Open Source Hardware - Arduino</h2>
             
             <img src="../images/exercises/exercise2/pic40.png" alt="Arduino UNO R4 WiFi" style="width: 100%; max-width: 800px; margin: 20px auto; display: block; border-radius: 8px;">
-            
-            <p><strong>Reference:</strong> Arduino UNO R4 WiFi 开发板详解 - <a href="http://xhslink.com/o/8dtNOFFrhe" target="_blank" style="color: var(--primary-color);">View on Xiaohongshu (Little Red Book)</a></p>
             
             <p>Arduino is an open-source electronic prototyping platform that includes hardware (various Arduino board models) and software (Arduino IDE). Its core advantages are:</p>
             
             <ul style="line-height: 2; margin-left: 20px;">
                 <li><strong>Open Source & Free:</strong> Hardware design, software code, and schematics are all open source, allowing free modification and secondary development</li>
-                <li><strong>Low Barrier to Entry:</strong> Uses simplified C/C++ syntax, no need to delve into microcontroller底层, beginners can get started quickly</li>
+                <li><strong>Low Barrier to Entry:</strong> Uses simplified C/C++ syntax, no need to delve into microcontroller basics, beginners can get started quickly</li>
                 <li><strong>Strong Ecosystem:</strong> Massive open-source libraries, sensor modules, and project cases worldwide, capable of achieving almost all electronic creativity</li>
             </ul>
             
             <h3>Common Application Scenarios:</h3>
             
             <ul style="line-height: 2; margin-left: 20px;">
-                <li><strong>Teaching & Learning:</strong> Programming basics (C/C++, logic training), electronics basics (sensors, LEDs, motors, circuits), school courses, graduation projects</li>
-                <li><strong>Smart Home:</strong> Smart lighting, environmental monitoring (temperature, humidity, air quality), automatic control (watering, feeding, curtains), security alerts</li>
-                <li><strong>Interactive Art & Installations:</strong> Interactive light shows, new media art installations, stage/exhibition effects</li>
-                <li><strong>DIY Electronics:</strong> Electronic clocks, thermometers, hygrometers, remote switches, doorbells, 3D printer controllers</li>
-                <li><strong>Industrial/Lab Applications:</strong> Data collection, simple automation control, IoT nodes (WiFi/Bluetooth data upload)</li>
+                <li><strong>Teaching & Learning:</strong> Programming basics (C/C++, logic training), electronics basics (sensors, LEDs, motors, circuits), school courses (information technology, general technology, innovation competitions), graduation projects/course designs (simple smart projects)</li>
+                <li><strong>Smart Home:</strong> Smart lighting (voice-controlled lights, motion sensor lights, RGB ambient lights), environmental monitoring (temperature/humidity, air quality, light, PM2.5 detection), automatic control (automatic watering, automatic fish feeding, smart curtains), security alerts (door magnetic alarm, infrared intrusion alarm, water leak detection)</li>
+                <li><strong>Interactive Art & Installations:</strong> Interactive light shows (music rhythm lights, body-sensing light and shadow), new media art installations (touch sensing, sound interaction), stage/exhibition effects (automatically triggered lights, smoke, mechanical actions)</li>
+                <li><strong>DIY Electronics:</strong> Electronic clocks, thermometers, hygrometers, simple oscilloscopes, Bluetooth/infrared remote switches, wireless doorbells, simple 3D printers, plotters, laser engraver controllers</li>
+                <li><strong>Industrial/Lab Applications:</strong> Data collection (temperature, pressure, RPM sensor recording), simple automation control (small motor start/stop, solenoid valve control), IoT nodes (upload data to mobile or cloud via WiFi/Bluetooth)</li>
             </ul>
         </section>
 
-        <!-- Arduino IDE -->
+        <!-- Section 2: Arduino IDE -->
         <section class="card">
             <h2>1. Arduino IDE</h2>
             
             <h3>(1) Introduction</h3>
-            <p>Arduino IDE is an integrated development environment for writing, uploading, and debugging programs based on the Arduino platform. It's an open-source tool that runs on Windows, Mac OS X, and Linux systems. It uses C/C++ language with a simple graphical interface, including built-in code editor, compiler, uploader, and serial monitor.</p>
+            <p>Arduino IDE is an integrated development environment for writing, uploading, and debugging programs based on the Arduino platform. It's an open-source tool that runs on Windows, Mac OS X, and Linux systems. Arduino IDE uses C/C++ language with a simple graphical interface, making it easy for users to write programs. Through this interface, users can easily access various Arduino board libraries and example programs, and quickly write and test their own programs.</p>
+            
+            <p>Arduino IDE includes a code editor, compiler, uploader, and serial monitor for debugging and viewing program output. Additionally, it supports multiple platforms and programming languages, and can integrate with other open-source tools. Using Arduino IDE, users can develop various Arduino projects such as LED control, sensor reading, robot control, etc. Its ease of use and powerful features make it one of the preferred tools for many makers and engineers.</p>
             
             <img src="../images/exercises/exercise2/pic41.png" alt="Arduino IDE Interface" style="width: 100%; max-width: 800px; margin: 20px auto; display: block; border-radius: 8px;">
             
@@ -102,68 +102,170 @@
             <h3>(2) Coding Methods</h3>
             
             <ul style="line-height: 2; margin-left: 20px;">
-                <li><strong>Program Structure:</strong> All Arduino programs contain two core functions. <code>setup()</code> runs once at startup for initialization; <code>loop()</code> runs infinitely after setup for core logic.</li>
-                <li><strong>Comments:</strong> Used to improve code readability, supporting single-line and multi-line comment formats.</li>
-                <li><strong>Variables:</strong> Supports int, float, char, boolean types. Variable names must start with a letter and can contain letters, numbers, and underscores.</li>
-                <li><strong>Pin Operations:</strong> Core hardware interaction through <code>pinMode()</code>, <code>digitalRead()</code>, and <code>digitalWrite()</code>.</li>
-                <li><strong>Custom Functions:</strong> Create custom functions to encapsulate code logic and simplify complex program structures.</li>
-                <li><strong>Library Usage:</strong> Import official/third-party libraries via <code>#include</code> to quickly implement servo control, I2C communication, sensor drivers, etc.</li>
-                <li><strong>Serial Communication:</strong> Use Serial object for board-computer data interaction via <code>Serial.begin()</code>, <code>Serial.print()</code>, and <code>Serial.println()</code>.</li>
+                <li><strong>Structure:</strong> An Arduino program consists of two essential functions: <code>setup()</code> and <code>loop()</code>. The <code>setup()</code> function runs only once at program startup for initialization settings, such as pin mode definition and serial port initialization. The <code>loop()</code> function runs in a loop after the <code>setup()</code> function executes, controlling the main program logic.</li>
+                <li><strong>Comments:</strong> Using comments improves code readability. You can use double slashes (<code>//</code>) to add single-line comments, or use slash-asterisk (<code>/* */</code>) to add multi-line comments.</li>
+                <li><strong>Variables:</strong> In Arduino, you can declare and use various variables such as integers (int), floating-point numbers (float), characters (char), and booleans (boolean). Variable names must start with a letter and can contain letters, numbers, and underscores.</li>
+                <li><strong>Pin Operations:</strong> Arduino's core is interacting with external devices, usually through pins for input and output. Use <code>pinMode()</code> to set pin mode as input or output, <code>digitalRead()</code> to read pin state, and <code>digitalWrite()</code> to set pin to HIGH or LOW.</li>
+                <li><strong>Functions:</strong> You can create custom functions to organize code and reuse specific functionality. Functions consist of function name, parameter list, and function body. Execute functions by calling the function name and passing parameters.</li>
+                <li><strong>Libraries:</strong> Arduino IDE has extensive library support to easily extend its functionality. You can import required libraries using <code>#include</code> directive and use library-provided functions and classes to implement specific features. For example, Servo library for servo control, Wire library for I2C communication, etc.</li>
+                <li><strong>Serial Communication:</strong> Arduino boards typically have a serial port. You can use the Serial object for serial communication with computers or other devices. Use <code>Serial.begin()</code> to initialize serial port, and <code>Serial.print()</code> and <code>Serial.println()</code> to send data to serial port.</li>
             </ul>
             
             <h3>(3) Hardware Connection</h3>
             
+            <p>When using Arduino IDE, hardware connection is very important as it involves physical connections with the Arduino board and external components. Here are the general hardware connection methods when using Arduino IDE:</p>
+            
             <ul style="line-height: 2; margin-left: 20px;">
-                <li><strong>Board Connection:</strong> Connect Arduino board to computer via USB cable for program upload, serial communication, and basic power supply.</li>
-                <li><strong>External Circuit Connection:</strong> Connect sensors, LEDs, buttons via jumper wires to digital/analog pins. Must correctly distinguish VCC, GND, and signal lines. LEDs need 220Ω current-limiting resistors.</li>
-                <li><strong>Power Supply:</strong> High-power components (motors, large LEDs, servos) require external batteries or power adapters to avoid board damage.</li>
-                <li><strong>Program Upload:</strong> After writing and debugging code in IDE, select the correct board model and COM port, then upload with one click.</li>
-                <li><strong>Debugging & Testing:</strong> Use serial monitor to view Serial output data and verify sensor values, pin states, and program logic.</li>
+                <li><strong>Connect Arduino Board:</strong> First, connect your Arduino board to the computer via USB cable. This allows you to upload programs to the Arduino board and perform serial communication with it.</li>
+                <li><strong>Connect External Circuits:</strong> If your project involves external circuits or sensors, you need to connect them to the Arduino board. Typically, this involves using jumper wires to connect sensor or module pins to digital or analog pins on the Arduino board. Ensure correct connection of power and ground pins, as well as necessary signal lines.</li>
+                <li><strong>Power Supply:</strong> If external components require additional power supply, such as motors, servos, or high-power LEDs, you may need to provide external power instead of drawing directly from the Arduino board. This can be achieved through external batteries, power adapters, or other power modules.</li>
+                <li><strong>Upload Program:</strong> After writing and debugging your program in Arduino IDE, upload it to the Arduino board via USB cable. Ensure that before uploading, the Arduino board is correctly connected to the computer and the correct board type and serial port are selected.</li>
+                <li><strong>Debugging and Testing:</strong> Once the program is successfully uploaded, you can use the serial monitor to view program output for debugging and testing. The serial monitor displays information output using <code>Serial.print()</code> and <code>Serial.println()</code>, helping to understand program execution status.</li>
             </ul>
         </section>
 
-        <!-- Running Light Program -->
+        <!-- Section 3: Running Light Program -->
         <section class="card">
-            <h2>2. Running Light Program</h2>
+            <h2>Running Light Program Execution</h2>
             
-            <p>Below is the complete code for implementing the running light effect:</p>
+            <h3>(1) Physical Connection Method</h3>
             
-            <pre><code><span class="comment">// Define LED pins: 2, 3, 4, 5, 6, 7</span>
-<span class="type">int</span> ledPins[] = {<span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>};
-<span class="type">int</span> ledCount = <span class="number">6</span>;
+            <ol style="line-height: 2; margin-left: 20px;">
+                <li><strong>Required Materials:</strong> Arduino development board, LED lights (quantity according to your needs), resistors (one per LED, determine resistance value based on selected LED characteristics), jumper wires or breadboard for connection</li>
+                <li><strong>Connect Circuit:</strong> Connect each LED's anode (long pin) to Arduino's digital output pins. Connect each LED's cathode (short pin) to ground (GND) through a resistor.</li>
+            </ol>
+            
+            <h3>(2) Program Execution Method</h3>
+            
+            <h4>Writing the Program</h4>
+            <ul style="line-height: 2; margin-left: 20px;">
+                <li>Create a new sketch in Arduino Integrated Development Environment (IDE).</li>
+                <li>At the beginning of the program, define the LED pins to be controlled.</li>
+                <li>Use loops to turn LEDs on and off one by one to achieve the running light effect.</li>
+                <li>You can set delay intervals to control the speed of the running light.</li>
+            </ul>
+            
+            <img src="../images/exercises/exercise2/pic46.png" alt="Running Light Setup" style="width: 100%; max-width: 800px; margin: 20px auto; display: block; border-radius: 8px;">
+            
+            <h3>I. Hardware List</h3>
+            <ul style="line-height: 2; margin-left: 20px;">
+                <li>Arduino Uno R4 Minima/WiFi</li>
+                <li>HC-SR04 Ultrasonic Module</li>
+                <li>4 LED lights + 220Ω current-limiting resistors ×4</li>
+                <li>Breadboard, jumper wires</li>
+            </ul>
+            
+            <h3>II. Circuit Wiring Diagram</h3>
+            
+            <h4>1. HC-SR04 Ultrasonic Wiring</h4>
+            <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+                <thead>
+                    <tr style="background-color: var(--color-sage-light);">
+                        <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">HC-SR04 Pin</th>
+                        <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">Arduino R4 Pin</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="border: 1px solid #ddd; padding: 12px;">VCC</td>
+                        <td style="border: 1px solid #ddd; padding: 12px;">5V</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #ddd; padding: 12px;">GND</td>
+                        <td style="border: 1px solid #ddd; padding: 12px;">GND</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #ddd; padding: 12px;">Trig</td>
+                        <td style="border: 1px solid #ddd; padding: 12px;">D9</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #ddd; padding: 12px;">Echo</td>
+                        <td style="border: 1px solid #ddd; padding: 12px;">D10</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h4>2. Running Light LED Wiring (Common Cathode, Negative Terminal Connected to Resistor)</h4>
+            <ul style="line-height: 2; margin-left: 20px;">
+                <li>LED1 → D3 + 220Ω resistor → GND</li>
+                <li>LED2 → D4 + 220Ω resistor → GND</li>
+                <li>LED3 → D5 + 220Ω resistor → GND</li>
+                <li>LED4 → D6 + 220Ω resistor → GND</li>
+            </ul>
+            
+            <h3>Using Ultrasonic Sensor to Complete Running Light Illumination</h3>
+            
+            <h4>Implementation Code:</h4>
+            <pre><code><span class="comment">// Ultrasonic pin definitions</span>
+<span class="keyword">const int</span> trigPin = <span class="number">9</span>;
+<span class="keyword">const int</span> echoPin = <span class="number">10</span>;
+<span class="comment">// LED running light pin array</span>
+<span class="type">int</span> ledPins[] = {<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>};
+<span class="type">int</span> ledNum = <span class="keyword">sizeof</span>(ledPins)/<span class="keyword">sizeof</span>(ledPins[<span class="number">0</span>]);
+<span class="type">long</span> distance;
+<span class="type">long</span> duration;
 
 <span class="keyword">void</span> <span class="function">setup</span>() {
-  <span class="comment">// Initialize all pins as output mode</span>
-  <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i < ledCount; i++) {
+  <span class="function">Serial.begin</span>(<span class="number">9600</span>);
+  <span class="comment">// Ultrasonic pin modes</span>
+  <span class="function">pinMode</span>(trigPin, OUTPUT);
+  <span class="function">pinMode</span>(echoPin, INPUT);
+  <span class="comment">// Set all LEDs as output</span>
+  <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>; i&lt;ledNum; i++){
     <span class="function">pinMode</span>(ledPins[i], OUTPUT);
+    <span class="function">digitalWrite</span>(ledPins[i], LOW); <span class="comment">// Initial light off</span>
   }
 }
 
-<span class="keyword">void</span> <span class="function">loop</span>() {
-  <span class="comment">// Light from left to right</span>
-  <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i < ledCount; i++) {
-    <span class="function">digitalWrite</span>(ledPins[i], HIGH);
-    <span class="function">delay</span>(<span class="number">150</span>);
-    <span class="function">digitalWrite</span>(ledPins[i], LOW);
-  }
+<span class="comment">// Get ultrasonic distance function</span>
+<span class="type">long</span> <span class="function">getDistance</span>(){
+  <span class="function">digitalWrite</span>(trigPin, LOW);
+  <span class="function">delayMicroseconds</span>(<span class="number">2</span>);
+  <span class="function">digitalWrite</span>(trigPin, HIGH);
+  <span class="function">delayMicroseconds</span>(<span class="number">10</span>);
+  <span class="function">digitalWrite</span>(trigPin, LOW);
+  duration = <span class="function">pulseIn</span>(echoPin, HIGH);
+  distance = duration * <span class="number">0.034</span> / <span class="number">2</span>;
+  <span class="keyword">return</span> distance;
+}
 
-  <span class="comment">// Light from right to left</span>
-  <span class="keyword">for</span> (<span class="type">int</span> i = ledCount - <span class="number">2</span>; i > <span class="number">0</span>; i--) {
-    <span class="function">digitalWrite</span>(ledPins[i], HIGH);
-    <span class="function">delay</span>(<span class="number">150</span>);
-    <span class="function">digitalWrite</span>(ledPins[i], LOW);
+<span class="keyword">void</span> <span class="function">loop</span>() {
+  distance = <span class="function">getDistance</span>();
+  <span class="function">Serial.print</span>(<span class="string">"Distance: "</span>);
+  <span class="function">Serial.print</span>(distance);
+  <span class="function">Serial.println</span>(<span class="string">" cm"</span>);
+
+  <span class="comment">// Trigger running light when less than 30cm</span>
+  <span class="keyword">if</span>(distance &lt; <span class="number">30</span>){
+    <span class="comment">// Forward running</span>
+    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>; i&lt;ledNum; i++){
+      <span class="function">digitalWrite</span>(ledPins[i], HIGH);
+      <span class="function">delay</span>(<span class="number">150</span>);
+      <span class="function">digitalWrite</span>(ledPins[i], LOW);
+    }
+    <span class="comment">// Reverse return flow (optional, comment out to keep only unidirectional running)</span>
+    <span class="keyword">for</span>(<span class="type">int</span> i=ledNum-<span class="number">2</span>; i&gt;<span class="number">0</span>; i--){
+      <span class="function">digitalWrite</span>(ledPins[i], HIGH);
+      <span class="function">delay</span>(<span class="number">150</span>);
+      <span class="function">digitalWrite</span>(ledPins[i], LOW);
+    }
+  }<span class="keyword">else</span>{
+    <span class="comment">// No object nearby, all off</span>
+    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>; i&lt;ledNum; i++){
+      <span class="function">digitalWrite</span>(ledPins[i], LOW);
+    }
   }
+  <span class="function">delay</span>(<span class="number">100</span>);
 }</code></pre>
             
-            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; margin: 20px 0;">
-                <img src="../images/exercises/exercise2/pic46.png" alt="Running Light Effect 1" style="width: 100%; border-radius: 8px;">
-                <img src="../images/exercises/exercise2/pic47.png" alt="Running Light Effect 2" style="width: 100%; border-radius: 8px;">
-            </div>
+            <img src="../images/exercises/exercise2/pic47.png" alt="Running Light Effect" style="width: 100%; max-width: 800px; margin: 20px auto; display: block; border-radius: 8px;">
+            
+            <img src="../images/exercises/exercise2/pic_gif3.gif" alt="Running Light Animation" style="width: 100%; max-width: 800px; margin: 20px auto; display: block; border-radius: 8px;">
         </section>
 
-        <!-- Case Studies -->
+        <!-- Section 4: Case Studies -->
         <section class="card">
-            <h2>3. Case Studies</h2>
+            <h2>4. Case Studies</h2>
             
             <h3>Case 1: "Emotion Aid" Project</h3>
             
@@ -173,57 +275,57 @@
             
             <ul style="line-height: 2; margin-left: 20px;">
                 <li><strong>Core Objective:</strong> Help people with communication barriers (especially autism spectrum) convey their emotional states to the outside world using devices instead of body language</li>
-                <li><strong>Hardware Architecture:</strong> Arduino Uno Rev3 + capacitive humidity sensor (EDA/GSR) + temperature sensor + pulse sensor + 9V battery</li>
+                <li><strong>Hardware Architecture:</strong> Arduino Uno Rev3 master controller + capacitive humidity sensor (EDA/GSR) + temperature sensor + pulse sensor + 9V battery power supply</li>
                 <li><strong>Output Method:</strong> Drive a fan-like device through small servos, changing its shape to express emotions through intuitive physical "fanning" motions</li>
             </ul>
             
             <div style="background-color: #d4edda; border-left: 4px solid #28a745; padding: 15px; margin: 20px 0; border-radius: 4px;">
                 <h4 style="margin-top: 0; color: #155724;">Advantages:</h4>
                 <ol style="line-height: 2; margin-left: 20px; color: #155724;">
-                    <li><strong>Novel & Intuitive Output:</strong> Uses pure physical motion to express emotions rather than screens or lights, more friendly to sensory-sensitive individuals</li>
-                    <li><strong>Multi-modal Signal Fusion:</strong> Integrates EDA, body temperature, and heart rate signals using "multi-modal fusion" to improve emotion inference robustness</li>
-                    <li><strong>Open Source & Community Friendly:</strong> Complete course design with code, circuit diagrams, and structural designs fully open-sourced on Instructables</li>
+                    <li><strong>Novel & Intuitive Output:</strong> Uses pure physical motion to express emotions rather than screens or lights, more friendly to sensory-sensitive individuals, and can attract attention and curiosity from surrounding people, opening non-verbal communication.</li>
+                    <li><strong>Multi-modal Signal Fusion:</strong> Integrates three types of physiological signals: skin electrical activity (EDA), body temperature, and heart rate, using "multi-modal fusion" approach to improve emotion inference robustness, more scientific than single sensor.</li>
+                    <li><strong>Open Source & Community Friendly:</strong> As a complete course design, code, circuit diagrams, and structural designs are fully open-sourced on Instructables, using entry-level hardware like Arduino Uno and servos, very convenient for subsequent reproduction and improvement.</li>
                 </ol>
             </div>
             
             <div style="background-color: #fff3cd; border-left: 4px solid #ffc107; padding: 15px; margin: 20px 0; border-radius: 4px;">
                 <h4 style="margin-top: 0; color: #856404;">Disadvantages:</h4>
                 <ol style="line-height: 2; margin-left: 20px; color: #856404;">
-                    <li><strong>Oversimplified Emotion Inference:</strong> Inferring complex human emotions solely from EDA, heart rate, and temperature is scientifically extremely difficult</li>
-                    <li><strong>Rough Data Fusion:</strong> No effective noise reduction or feature extraction on raw data; motion artifacts severely interfere with signals</li>
-                    <li><strong>Suboptimal Wearing Position:</strong> Attached to underwear limits gender applicability and is greatly affected by breathing and body movement</li>
-                    <li><strong>Battery & Durability Issues:</strong> 9V battery has limited capacity,难以 support long-term use and servo current requirements</li>
-                    <li><strong>Risk of Emotional Labeling:</strong> Crude simplification of emotional states may传递 wrong information when misjudged, causing social misunderstandings</li>
+                    <li><strong>Oversimplified Emotion Inference:</strong> This is the project's biggest shortcoming. Inferring complex human emotions (such as frustration, anxiety) solely from EDA, heart rate, and temperature is scientifically extremely difficult or even unrealistic. This method simply links complex physiological signals with emotions, making conclusions very fragile.</li>
+                    <li><strong>Rough Data Fusion & Processing:</strong> The project does not seem to effectively denoise or extract features from raw data. For example, motion artifacts severely interfere with pulse and EDA sensor signals, and the project ignores individual physiological baseline differences, reducing inference universality.</li>
+                    <li><strong>Suboptimal Wearing Position:</strong> Design attached to underwear limits gender applicability, and this position is greatly affected by breathing and body movement, easily introducing interference.</li>
+                    <li><strong>Battery & Durability Issues:</strong> 9V battery has limited capacity,难以 support long-term use and drive servo current requirements.</li>
+                    <li><strong>Risk of Emotional Labeling:</strong> Emotional states are crudely simplified to a single mode. When the device "judges" incorrectly, it may传递 wrong information, causing social misunderstandings or negative labels, which contradicts the original intention of helping communication.</li>
                 </ol>
             </div>
             
-            <h3 style="margin-top: 40px;">Case 2: UESTC Professor Xu Peng's Team - "Wireless Brain Function Assessment System"</h3>
+            <h3 style="margin-top: 40px;">Case 2: UESTC Professor Xu Peng's Team - "Wireless Brain Function Assessment System" and "Autism Precision Neuromodulation Technology"</h3>
             
             <p><strong>Case Link:</strong> <a href="https://www.new1.uestc.edu.cn/?n=UestcNews.Front.DocumentV2.ArticlePage&Id=96164" target="_blank" style="color: var(--primary-color);">https://www.new1.uestc.edu.cn/?n=UestcNews.Front.DocumentV2.ArticlePage&Id=96164</a></p>
             
             <ul style="line-height: 2; margin-left: 20px;">
-                <li><strong>Core Objective:</strong> Provide objective, quantitative auxiliary diagnosis and precise intervention for autism, benefiting over 3,000 children domestically and internationally</li>
-                <li><strong>Hardware Architecture:</strong> Wireless dry-electrode EEG cap (non-invasive) and targeted transcranial magnetic stimulation device, no conductive gel required</li>
-                <li><strong>Core Technology:</strong> Diagnosis uses deep learning and transfer learning AI algorithms to identify brain network abnormalities (>90% accuracy); intervention precisely locates superficial nodes to indirectly regulate deep brain regions</li>
+                <li><strong>Core Objective:</strong> Provide objective, quantitative auxiliary diagnosis and precise intervention for autism, benefiting over 3,000 children domestically and internationally.</li>
+                <li><strong>Hardware Architecture:</strong> Based on wireless dry-electrode EEG cap (non-invasive) and targeted transcranial magnetic stimulation device, no conductive gel required.</li>
+                <li><strong>Core Technology:</strong> Auxiliary diagnosis uses AI algorithms integrating deep learning and transfer learning to identify brain network abnormalities (>90% accuracy); intervention precisely locates superficial nodes to indirectly regulate deep brain regions.</li>
             </ul>
             
             <div style="background-color: #d4edda; border-left: 4px solid #28a745; padding: 15px; margin: 20px 0; border-radius: 4px;">
                 <h4 style="margin-top: 0; color: #155724;">Advantages:</h4>
                 <ol style="line-height: 2; margin-left: 20px; color: #155724;">
-                    <li><strong>Pioneered "Quantitative Diagnosis":</strong> Combined EEG signals with AI algorithms to transform diagnosis from experience-based "qualitative judgment" to data-supported "quantitative diagnosis"</li>
-                    <li><strong>High User-Friendliness:</strong> Wireless dry-electrode EEG cap for diagnosis and short-duration treatment (3 times daily, 40 seconds each) greatly improved comfort and cooperation</li>
-                    <li><strong>"Deep Brain" Intervention Possible:</strong> Targeted transcranial magnetic therapy indirectly regulates deep brain regions through superficial "relay stations", achieving over 80% effectiveness</li>
+                    <li><strong>Pioneered "Quantitative Diagnosis" Paradigm:</strong> Combined EEG signals with AI algorithms to transform diagnosis from experience-based "qualitative judgment" to data-supported "quantitative diagnosis", achieving major clinical breakthrough.</li>
+                    <li><strong>High User-Friendliness Experience:</strong> Wireless dry-electrode EEG cap for diagnosis and short-duration treatment mode (3 times daily, 40 seconds each) greatly improved comfort and cooperation of autistic children.</li>
+                    <li><strong>"Deep Brain" Intervention Possible:</strong> Targeted transcranial magnetic therapy indirectly regulates deep brain regions through superficial "relay stations", providing new path for solving deep brain region intervention难题, achieving over 80% effectiveness.</li>
                 </ol>
             </div>
             
             <div style="background-color: #fff3cd; border-left: 4px solid #ffc107; padding: 15px; margin: 20px 0; border-radius: 4px;">
                 <h4 style="margin-top: 0; color: #856404;">Disadvantages:</h4>
                 <ol style="line-height: 2; margin-left: 20px; color: #856404;">
-                    <li><strong>High Technical Threshold & Cost:</strong> BCI and TMS equipment研发 and manufacturing costs are high, mainly面向 tertiary hospitals or professional rehabilitation institutions in the short term</li>
-                    <li><strong>Physiological Signal Limitations:</strong> EEG signals have low signal-to-noise ratio and are easily interfered with;后期 processing and AI model training require extremely high algorithm standards</li>
-                    <li><strong>Institutional Application Constraints:</strong> The entire system requires professional场地 operation,难以 serve as home daily intervention equipment</li>
-                    <li><strong>Long-term Safety & Effectiveness Pending Verification:</strong> Although effectiveness exceeds 80%, this evaluation多源于 short-term clinical observations; long-term impacts need longer tracking studies</li>
-                    <li><strong>"Black Box" Problem:</strong> AI algorithms虽 accurate but decision logic is opaque to humans, making it difficult for doctors to judge specific bases for conclusions</li>
+                    <li><strong>High Technical Threshold & Cost:</strong> BCI and TMS equipment研发 and manufacturing costs are high,短期内可能主要面向 tertiary hospitals or professional rehabilitation institutions, difficult to普及.</li>
+                    <li><strong>Physiological Signal Common Limitations:</strong> EEG signals themselves have low signal-to-noise ratio and are easily interfered with;后期 processing and AI model training require extremely high algorithm standards,存在一定的误判风险.</li>
+                    <li><strong>Institutional Application Scenario Constraints:</strong> The entire system requires professional场地 operation,难以 serve as home daily intervention equipment,无法像可穿戴产品那样提供全天候支持.</li>
+                    <li><strong>Long-term Safety & Effectiveness Pending Verification:</strong> Although effectiveness exceeds 80%, this evaluation多源于 short-term clinical observations; long-term impacts of transcranial magnetic stimulation仍需更长时间跨度的跟踪研究.</li>
+                    <li><strong>"Black Box" Problem & Attribution Dilemma:</strong> AI algorithms虽 accurate but decision logic is opaque to humans. Doctors难以判断 AI得出某结论的具体依据,增加了诊断复核的难度.</li>
                 </ol>
             </div>
         </section>
@@ -235,13 +337,13 @@
             <ul style="line-height: 2; margin-left: 20px;">
                 <li>The core concepts and application scenarios of Arduino open-source hardware platform</li>
                 <li>Arduino IDE usage, coding methods, and hardware connection techniques</li>
-                <li>How to write and upload running light programs to control multiple LEDs</li>
+                <li>How to write and upload running light programs controlled by ultrasonic sensors</li>
                 <li>Analyzed two real-world cases applying Arduino technology to assist autistic individuals</li>
                 <li>Understanding both innovative solutions and existing challenges in assistive technology</li>
             </ul>
         </section>
 
-        <!-- 返回按钮 -->
+        <!-- Back Button -->
         <div style="text-align: center; margin-top: 40px;">
             <a href="../exercises.html" class="btn">← Back to Exercise List</a>
         </div>
