@@ -6,7 +6,7 @@
     <title>Exercise 2: Arduino - Jowywlz</title>
     <link rel="stylesheet" href="../css/style.css">
     <style>
-        /* 代码高亮样式 */
+        /* Code highlighting styles */
         pre {
             background-color: #e8e8e8;
             color: #333333;
@@ -147,12 +147,6 @@
                 <li>You can set delay intervals to control the speed of the running light.</li>
             </ul>
             
-            <div style="background-color: #f5f5f5; padding: 15px; border-radius: 8px; margin: 20px 0;">
-                <h4 style="margin-top: 0;">Running Light Experiment</h4>
-                <p style="margin-bottom: 5px;"><strong>Input:</strong> Ultrasonic Sensor</p>
-                <p style="margin-bottom: 0;"><strong>Output:</strong> LED Lights</p>
-            </div>
-            
             <img src="../images/exercises/exercise2/pic46.png" alt="Running Light Setup" style="width: 100%; max-width: 800px; margin: 20px auto; display: block; border-radius: 8px;">
             
             <h3>I. Hardware List</h3>
@@ -239,7 +233,7 @@
 
 <span class="keyword">void</span> <span class="function">loop</span>() {
   distance = <span class="function">getDistance</span>();
-  <span class="function">Serial.print</span>(<span class="string">"Distance: "</span>);
+  <span class="function">Serial.print</span>(<span class="string">"距离："</span>);
   <span class="function">Serial.print</span>(distance);
   <span class="function">Serial.println</span>(<span class="string">" cm"</span>);
 
@@ -266,7 +260,7 @@
   <span class="function">delay</span>(<span class="number">100</span>);
 }</code></pre>
             
-            <img src="../images/exercises/exercise2/pic47.png" alt="Running Light Effect" style="width: 100%; max-width: 800px; margin: 20px auto; display: block; border-radius: 8px;">
+            <img src="../images/exercises/exercise2/pic46.png" alt="Running Light Effect" style="width: 100%; max-width: 800px; margin: 20px auto; display: block; border-radius: 8px;">
             
             <img src="../images/exercises/exercise2/pic_gif3.gif" alt="Running Light Animation" style="width: 100%; max-width: 800px; margin: 20px auto; display: block; border-radius: 8px;">
         </section>
@@ -277,7 +271,7 @@
             
             <h3>Case 1: "Emotion Aid" Project</h3>
             
-            <img src="../images/exercises/exercise2/pic48.png" alt="Emotion Aid Device" style="width: 100%; max-width: 800px; margin: 20px auto; display: block; border-radius: 8px;">
+            <img src="../images/exercises/exercise2/pic47.png" alt="Emotion Aid Device" style="width: 100%; max-width: 800px; margin: 20px auto; display: block; border-radius: 8px;">
             
             <p><strong>Case Link:</strong> <a href="https://blog.arduino.cc/2023/05/19/the-emotion-aid-is-a-wearable-device-that-communicates-the-users-emotions/#respond" target="_blank" style="color: var(--primary-color);">https://blog.arduino.cc/2023/05/19/the-emotion-aid-is-a-wearable-device-that-communicates-the-users-emotions/#respond</a></p>
             
