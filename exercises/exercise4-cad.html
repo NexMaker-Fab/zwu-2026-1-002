@@ -5,6 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exercise 4: Computer Aided Design - Jowywlz</title>
     <link rel="stylesheet" href="../css/style.css">
+    <style>
+        /* Code and prompt highlighting styles */
+        pre {
+            background-color: #e8e8e8;
+            color: #333333;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-family: 'Consolas', 'Monaco', monospace;
+            line-height: 1.6;
+            margin: 20px 0;
+        }
+        
+        code {
+            font-family: 'Consolas', 'Monaco', monospace;
+            background-color: #e8e8e8;
+            padding: 2px 6px;
+            border-radius: 3px;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -21,88 +41,101 @@
 
     <main style="max-width: 1000px; margin: 0 auto; padding: 40px 20px;">
         <h1 style="text-align: center; margin-bottom: 10px;">Exercise 4: Computer Aided Design</h1>
-        <p style="text-align: center; color: var(--color-text-light); margin-bottom: 40px;">Export F3D Model from SophiCar and Create Custom Parts in Fusion 360 with AI Assistant</p>
+        <p style="text-align: center; color: var(--color-text-light); margin-bottom: 40px;">AI-Assisted Car Parts Creation</p>
 
-        <!-- Section 1: Export from SophiCar -->
+        <!-- Section 1: AI-Made Car Parts -->
         <section class="card">
-            <h2>Step 1: Export F3D Model from SophiCar Website</h2>
+            <h2>AI-Made Car Parts</h2>
             
-            <p>Register and log in to the SophiCar website, then export the F3D car model to Fusion 360.</p>
+            <p>Register and log in to SophiCar website at http://www.sophicar.com/parametric-modeling, then export the F3D car model to Fusion 360.</p>
             
-            <img src="../images/exercises/exercise4/pic18.png" alt="SophiCar Website Export" style="width: 100%; max-width: 800px; margin: 20px auto; display: block; border-radius: 8px;">
-        </section>
-
-        <!-- Section 2: Open Model in Fusion 360 -->
-        <section class="card">
-            <h2>Step 2: Open Car Model in Fusion 360</h2>
+            <img src="../images/exercises/exercise4/pic18.png" alt="SophiCar Website" style="width: 100%; max-width: 800px; margin: 20px auto; display: block; border-radius: 8px;">
             
-            <p>Open the exported car model in Fusion 360 for further editing and customization.</p>
+            <p>In Fusion 360, import the F3D car download file and open the car model.</p>
             
-            <img src="../images/exercises/exercise4/pic19.png" alt="Fusion 360 Open Model" style="width: 100%; max-width: 800px; margin: 20px auto; display: block; border-radius: 8px;">
-        </section>
-
-        <!-- Section 3: AI Prompt and Generation Process -->
-        <section class="card">
-            <h2>Step 3: AI Prompt Writing and Part Generation Process</h2>
+            <img src="../images/exercises/exercise4/pic19.png" alt="Fusion 360 Import" style="width: 100%; max-width: 800px; margin: 20px auto; display: block; border-radius: 8px;">
             
-            <p>Use Autodesk Assistant AI to generate custom parts by writing specific prompts with dimensions and positions.</p>
+            <h3>AI Prompt, Generation and Adjustment Process</h3>
+            
+            <p><strong>Prompt:</strong> Help me make a steering wheel and seats on this car, with more details</p>
+            <p><strong>Feedback:</strong> Need to change the steering wheel radius to 4.5cm, the seat style is a bit strange, let's modify it again</p>
             
             <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; margin: 20px 0;">
                 <img src="../images/exercises/exercise4/pic20.png" alt="AI Prompt 1" style="width: 100%; border-radius: 8px;">
-                <img src="../images/exercises/exercise4/pic21.png" alt="AI Prompt 2" style="width: 100%; border-radius: 8px;">
-                <img src="../images/exercises/exercise4/pic22.png" alt="AI Generation 1" style="width: 100%; border-radius: 8px;">
-                <img src="../images/exercises/exercise4/pic23.png" alt="AI Generation 2" style="width: 100%; border-radius: 8px;">
-                <img src="../images/exercises/exercise4/pic24.png" alt="AI Adjustment 1" style="width: 100%; border-radius: 8px;">
-                <img src="../images/exercises/exercise4/pic25.png" alt="AI Adjustment 2" style="width: 100%; border-radius: 8px;">
-                <img src="../images/exercises/exercise4/pic26.png" alt="AI Process 1" style="width: 100%; border-radius: 8px;">
-                <img src="../images/exercises/exercise4/pic27.png" alt="AI Process 2" style="width: 100%; border-radius: 8px;">
-                <img src="../images/exercises/exercise4/pic28.png" alt="AI Result 1" style="width: 100%; border-radius: 8px;">
-                <img src="../images/exercises/exercise4/pic29.png" alt="AI Result 2" style="width: 100%; border-radius: 8px;">
-                <img src="../images/exercises/exercise4/pic30.png" alt="AI Refinement 1" style="width: 100%; border-radius: 8px;">
-                <img src="../images/exercises/exercise4/pic31.png" alt="AI Refinement 2" style="width: 100%; border-radius: 8px;">
-                <img src="../images/exercises/exercise4/pic32.png" alt="AI Final 1" style="width: 100%; border-radius: 8px;">
-                <img src="../images/exercises/exercise4/pic33.png" alt="AI Final 2" style="width: 100%; border-radius: 8px;">
+                <img src="../images/exercises/exercise4/pic21.png" alt="AI Generation 1" style="width: 100%; border-radius: 8px;">
             </div>
             
-            <p>By writing prompts to AUTODESK ASSISTANT, we created two parts: a steering wheel and a car seat. Specific positions and dimensions were specified to facilitate later modifications. I shortened the seat length and reduced the armrest thickness, finally completing the part creation.</p>
+            <p><strong>Prompt:</strong> Why is the chair clipping through? Move both the steering wheel and chair backward by 4cm; the steering wheel position is wrong, the rod and disk are separated; this steering wheel doesn't look right</p>
             
-            <img src="../images/exercises/exercise4/pic34.png" alt="Steering Wheel Part" style="width: 100%; max-width: 800px; margin: 20px auto; display: block; border-radius: 8px;">
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin: 20px 0;">
+                <img src="../images/exercises/exercise4/pic22.png" alt="AI Prompt 2" style="width: 100%; border-radius: 8px;">
+                <img src="../images/exercises/exercise4/pic23.png" alt="AI Generation 2" style="width: 100%; border-radius: 8px;">
+                <img src="../images/exercises/exercise4/pic24.png" alt="AI Adjustment 2" style="width: 100%; border-radius: 8px;">
+            </div>
             
-            <img src="../images/exercises/exercise4/pic35.png" alt="Car Seat Part" style="width: 100%; max-width: 800px; margin: 20px auto; display: block; border-radius: 8px;">
+            <p><strong>Prompt:</strong> Move the seat further away from the steering wheel</p>
             
-            <h3>GIF Animation Demonstration</h3>
-            <img src="../images/exercises/exercise4/pic_gif1.gif" alt="Part Creation Process" style="width: 100%; max-width: 800px; margin: 20px auto; display: block; border-radius: 8px;">
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin: 20px 0;">
+                <img src="../images/exercises/exercise4/pic25.png" alt="AI Prompt 3" style="width: 100%; border-radius: 8px;">
+                <img src="../images/exercises/exercise4/pic26.png" alt="AI Generation 3" style="width: 100%; border-radius: 8px;">
+                <img src="../images/exercises/exercise4/pic27.png" alt="AI Adjustment 3" style="width: 100%; border-radius: 8px;">
+            </div>
+            
+            <p><strong>Prompt:</strong> Reduce the seat armrest thickness by half</p>
+            
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; margin: 20px 0;">
+                <img src="../images/exercises/exercise4/pic28.png" alt="AI Prompt 4" style="width: 100%; border-radius: 8px;">
+                <img src="../images/exercises/exercise4/pic29.png" alt="AI Final Result" style="width: 100%; border-radius: 8px;">
+            </div>
+            
+            <p>By writing prompts to AUTODESK ASSISTANT, we helped create two parts: a steering wheel and a car seat. Specific positions and dimensions need to be specified for easy modification later. I shortened the seat length and reduced the armrest thickness, finally completing the part creation.</p>
+            
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; margin: 20px 0;">
+                <img src="../images/exercises/exercise4/pic30.png" alt="Final Part 1" style="width: 100%; border-radius: 8px;">
+                <img src="../images/exercises/exercise4/pic31.png" alt="Final Part 2" style="width: 100%; border-radius: 8px;">
+            </div>
+            
+            <h3>GIF Animation Display</h3>
+            <img src="../images/exercises/exercise4/gif1.gif" alt="AI Car Parts Animation" style="width: 100%; max-width: 800px; margin: 20px auto; display: block; border-radius: 8px;">
         </section>
 
-        <!-- Section 4: Download Models from Autodesk Gallery -->
-        <section class="card">
-            <h2>Step 4: Download Models from Autodesk Community Gallery</h2>
-            
-            <p>Log in to https://www.autodesk.com/community/gallery website to find required models.</p>
-            
-            <img src="../images/exercises/exercise4/pic36.png" alt="Autodesk Gallery Homepage" style="width: 100%; max-width: 800px; margin: 20px auto; display: block; border-radius: 8px;">
-            
-            <p>Search using English keywords.</p>
-            
-            <img src="../images/exercises/exercise4/pic37.png" alt="English Search" style="width: 100%; max-width: 800px; margin: 20px auto; display: block; border-radius: 8px;">
-            
-            <p>After finding and confirming the desired model, click "download model".</p>
-            
-            <img src="../images/exercises/exercise4/pic38.png" alt="Download Model" style="width: 100%; max-width: 800px; margin: 20px auto; display: block; border-radius: 8px;">
-            
-            <p>Open in Fusion 360 and perform debugging/adjustments.</p>
-            
-            <img src="../images/exercises/exercise4/pic39.png" alt="Fusion 360 Debugging" style="width: 100%; max-width: 800px; margin: 20px auto; display: block; border-radius: 8px;">
-            
-            <h3>Final Effect GIF Animation</h3>
-            <img src="../images/exercises/exercise4/pic_gif2.gif" alt="Final Effect Animation" style="width: 100%; max-width: 800px; margin: 20px auto; display: block; border-radius: 8px;">
-        </section>
-
-        <!-- Homemade Car Parts -->
+        <!-- Section 2: Homemade Car Parts -->
         <section class="card">
             <h2>Homemade Car Parts</h2>
+            
             <p>Create a small box as a container that can be used for transporting items.</p>
             
+            <h3>Step 1:</h3>
+            <p>Click the "Create Sketch" icon, select the plane directly above the car, draw the box area, and click "Finish Sketch" when done.</p>
+            
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; margin: 20px 0;">
+                <img src="../images/exercises/exercise4/pic32.png" alt="Step 1 - Create Sketch" style="width: 100%; border-radius: 8px;">
+                <img src="../images/exercises/exercise4/pic33.png" alt="Step 1 - Draw Box" style="width: 100%; border-radius: 8px;">
+            </div>
+            
+            <h3>Step 2:</h3>
+            <p>Click the "Extrude" icon, select the shape to be extruded, set the height. Here the height is set to 45cm.</p>
+            
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; margin: 20px 0;">
+                <img src="../images/exercises/exercise4/pic34.png" alt="Step 2 - Extrude Icon" style="width: 100%; border-radius: 8px;">
+                <img src="../images/exercises/exercise4/pic35.png" alt="Step 2 - Set Height" style="width: 100%; border-radius: 8px;">
+            </div>
+            
+            <h3>Step 3:</h3>
+            <p>Create a lid to prevent items from falling out due to bumps. The connection method is magnetic attachment.</p>
+            <p>Click the "Create Sketch" icon again, select the upper plane of the box, draw the same area as the box, and click "Finish Sketch" when done.</p>
+            
+            <img src="../images/exercises/exercise4/pic36.png" alt="Step 3 - Create Lid Sketch" style="width: 100%; max-width: 800px; margin: 20px auto; display: block; border-radius: 8px;">
+            
+            <h3>Step 4:</h3>
+            <p>Click the "Extrude" icon, select the lid's plan view. Here set the height to 5cm, which is relatively light and convenient to lift and cover. Set the height and click "Finish".</p>
+            
+            <img src="../images/exercises/exercise4/pic37.png" alt="Step 4 - Extrude Lid" style="width: 100%; max-width: 800px; margin: 20px auto; display: block; border-radius: 8px;">
+            
+            <h3>Final Product</h3>
+            <img src="../images/exercises/exercise4/pic38.png" alt="Final Product" style="width: 100%; max-width: 800px; margin: 20px auto; display: block; border-radius: 8px;">
+            
+            <h3>GIF Animation Display</h3>
             <img src="../images/exercises/exercise4/gif4.gif" alt="Homemade Car Parts Animation" style="width: 100%; max-width: 800px; margin: 20px auto; display: block; border-radius: 8px;">
         </section>
 
@@ -114,9 +147,10 @@
                 <li>How to export F3D models from SophiCar website to Fusion 360</li>
                 <li>Using Autodesk Assistant AI to generate custom parts with specific prompts</li>
                 <li>Specifying precise dimensions and positions for easy modification</li>
-                <li>Downloading and importing models from Autodesk Community Gallery</li>
-                <li>Opening and debugging downloaded models in Fusion 360</li>
+                <li>Iterative refinement through multiple prompt-feedback cycles</li>
                 <li>Creating customized steering wheel and car seat parts</li>
+                <li>Designing and modeling a storage box with magnetic lid</li>
+                <li>Using sketch and extrude tools in Fusion 360</li>
             </ul>
         </section>
 
