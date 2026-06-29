@@ -284,6 +284,161 @@ GND              → Breadboard common negative rail</code></pre>
             </div>
         </section>
 
+        <!-- Blue LED Control Code -->
+        <section class="card">
+            <h2>Blue LED Control Code</h2>
+            <p>The following Arduino code controls the blue LED strips with RFID card switching and ultrasonic sensor triggering:</p>
+            
+            <pre style="background-color: #e8e8e8; padding: 20px; border-radius: 8px; overflow-x: auto; font-family: 'Courier New', monospace; line-height: 1.6; margin: 20px 0;"><code>#include &lt;Adafruit_NeoPixel.h&gt;
+#include &lt;MFRC522.h&gt;
+#include &lt;SPI.h&gt;
+
+#define LED1_PIN 6
+#define LED2_PIN 7
+#define LED_NUM 10
+Adafruit_NeoPixel strip1(LED_NUM, LED1_PIN, NEO_GRB + NEO_KHZ800);
+Adafruit_NeoPixel strip2(LED_NUM, LED2_PIN, NEO_GRB + NEO_KHZ800);
+const uint8_t BRIGHT = 40;    // Increase brightness for better visibility
+uint32_t softBlue = strip1.Color(0, 0, 80);
+
+// Ultrasonic trigger distance changed to 5cm
+#define TRIG 9
+#define ECHO 10
+int finishDis = 5;
+
+// NFC pins
+#define SS_PIN 4
+#define RST_PIN 8
+MFRC522 mfrc(SS_PIN, RST_PIN);
+
+int currentTask = 0; // 0=standby 1=LED strip 1 2=LED strip 2
+bool taskFinish = false;
+
+unsigned long waterTimer = 0;
+const uint16_t waterDelay = 180;
+int idx1 = 0;
+int idx2 = 0;
+
+void setup() {
+  Serial.begin(9600);
+  strip1.begin();
+  strip2.begin();
+  strip1.setBrightness(BRIGHT);
+  strip2.setBrightness(BRIGHT);
+  strip1.clear(); strip2.clear();
+  strip1.show(); strip2.show();
+
+  pinMode(TRIG, OUTPUT);
+  pinMode(ECHO, INPUT);
+
+  SPI.begin();
+  mfrc.PCD_Init();
+  Serial.println("=== Board 1 startup complete ===");
+}
+
+float getDistanceCM() {
+  digitalWrite(TRIG, LOW);
+  delayMicroseconds(2);
+  digitalWrite(TRIG, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(TRIG, LOW);
+  unsigned long time = pulseIn(ECHO, HIGH);
+  return time * 0.034 / 2.0;
+}
+
+void loop() {
+  unsigned long now = millis();
+  float dis = getDistanceCM();
+
+  Serial.print("Current distance: ");
+  Serial.print(dis);
+  Serial.println(" cm");
+
+  // NFC card swipe to switch tasks
+  if (mfrc.PICC_IsNewCardPresent() && mfrc.PICC_ReadCardSerial()) {
+    if (currentTask == 0) {
+      currentTask = 1;
+      taskFinish = false;
+      idx1 = 0;
+      strip1.clear(); strip2.clear();
+      strip1.show(); strip2.show();
+      Serial.println("→ First group blue flowing light started");
+    } else if (currentTask == 1 && taskFinish) {
+      currentTask = 2;
+      taskFinish = false;
+      idx2 = 0;
+      strip1.clear(); strip1.show();
+      Serial.println("→ Switch to second group blue flowing light");
+    } else if (currentTask == 2 && taskFinish) {
+      currentTask = 0;
+      taskFinish = false;
+      strip1.clear(); strip2.clear();
+      strip1.show(); strip2.show();
+      Serial.println("→ All reset to standby");
+    }
+    mfrc.PICC_HaltA();
+  }
+
+  // First LED strip flowing effect
+  if (currentTask == 1) {
+    if (!taskFinish) {
+      if (now - waterTimer > waterDelay) {
+        waterTimer = now;
+        strip1.clear();
+        for (int i = 0; i &lt;= idx1; i++) {
+          strip1.setPixelColor(i, softBlue);
+        }
+        strip1.show();
+        idx1++;
+        if (idx1 &gt;= LED_NUM) idx1 = 0;
+      }
+      // ≤5cm triggers constant light
+      if (dis &lt;= finishDis) {
+        taskFinish = true;
+        strip1.fill(softBlue);
+        strip1.show();
+        Serial.println("★ First sand table completed, blue light constant on");
+      }
+    }
+  }
+
+  // Second LED strip flowing effect
+  if (currentTask == 2) {
+    if (!taskFinish) {
+      if (now - waterTimer > waterDelay) {
+        waterTimer = now;
+        strip2.clear();
+        for (int i = 0; i &lt;= idx2; i++) {
+          strip2.setPixelColor(i, softBlue);
+        }
+        strip2.show();
+        idx2++;
+        if (idx2 &gt;= LED_NUM) idx2 = 0;
+      }
+      if (dis &lt;= finishDis) {
+        taskFinish = true;
+        strip2.fill(softBlue);
+        strip2.show();
+        Serial.println("★ Second sand table completed, blue light constant on");
+      }
+    }
+  }
+
+  delay(100);
+}</code></pre>
+            
+            <div style="background-color: #e7f3ff; border-left: 4px solid #2196F3; padding: 15px; margin: 20px 0; border-radius: 4px;">
+                <h4 style="margin-top: 0; color: #0d47a1;">Code Features:</h4>
+                <ul style="line-height: 2; margin-left: 20px; color: #0d47a1;">
+                    <li><strong>RFID Card Switching:</strong> Swipe card to switch between standby, first LED strip, second LED strip, and reset</li>
+                    <li><strong>Flowing Light Effect:</strong> Blue LEDs light up sequentially with 180ms delay</li>
+                    <li><strong>Ultrasonic Trigger:</strong> When object is within 5cm, LED strip turns to constant blue light</li>
+                    <li><strong>Task Management:</strong> Three states - standby (0), first strip (1), second strip (2)</li>
+                    <li><strong>Serial Monitoring:</strong> Real-time distance and status output for debugging</li>
+                </ul>
+            </div>
+        </section>
+
         <!-- Device Introduction and Video -->
         <section class="card">
             <h2>Device Introduction</h2>
