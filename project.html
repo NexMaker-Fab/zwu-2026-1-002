@@ -125,6 +125,70 @@
             </div>
         </section>
 
+        <!-- Conceptual Design -->
+        <section class="card" style="background-color: var(--color-sage-light);">
+            <h2>Key tech analyse</h2>
+            
+            <h3>Concept Device Description</h3>
+            <p>Our concept device integrates distance sensors and heart rate monitoring to create an engaging, therapeutic experience for autistic children:</p>
+            
+            <div style="background-color: white; padding: 20px; border-radius: 8px; margin: 20px 0;">
+                <h4 style="margin-top: 0;">Core Features:</h4>
+                <ol style="line-height: 2; margin-left: 20px;">
+                    <li><strong>Distance Sensor Line-Tracing:</strong> Children trace shapes or lines along grooves. Correct completion triggers positive light feedback, guiding hands-on practice to improve concentration.</li>
+                    <li><strong>Heart Rate Monitoring:</strong> Real-time monitoring via heart rate sensor. When children squeeze the light bulb, breathing effects display according to heartbeat speed, allowing observation of emotional fluctuations to adjust training rhythm.</li>
+                    <li><strong>Gamified Interaction:</strong> Reduces resistance through game-like interaction format.</li>
+                    <li><strong>Positive Reinforcement:</strong> Enhances concentration through positive incentives.</li>
+                </ol>
+            </div>
+            
+            <div style="background-color: #d4edda; border-left: 4px solid #28a745; padding: 15px; margin: 20px 0; border-radius: 4px;">
+                <h4 style="margin-top: 0; color: #155724;">Design Benefits:</h4>
+                <ul style="line-height: 2; margin-left: 20px; color: #155724;">
+                    <li>Alleviate anxiety</li>
+                    <li>Coordinate limbs</li>
+                    <li>Improve concentration</li>
+                    <li>Reduce resistance</li>
+                    <li>Positive reinforcement approach</li>
+                </ul>
+            </div>
+            
+            <h3>Design Philosophy Integration</h3>
+            <p>Our design draws inspiration from the literature review:</p>
+            <ul style="line-height: 2; margin-left: 20px;">
+                <li><strong>From Paper 1:</strong> Line-tracing mechanism with immediate light feedback</li>
+                <li><strong>From Paper 2:</strong> Soft lighting and stable environment considerations</li>
+                <li><strong>From Paper 3:</strong> Multi-sensory integration (visual, tactile, emotional)</li>
+                <li><strong>From Paper 4:</strong> Physiological monitoring for emotion regulation</li>
+                <li><strong>From Paper 5:</strong> Positive reinforcement and graded difficulty levels</li>
+                <li><strong>From Paper 6:</strong> Safe, immersive interactive experience</li>
+                <li><strong>From Paper 7:</strong> Motor skill development through interactive play</li>
+                <li><strong>From Paper 8:</strong> Multi-sensory healing approach</li>
+            </ul>
+            
+            <h3 style="margin-top: 30px;">Potential Issues</h3>
+            
+            <h4 style="margin-top: 25px;">1. Hardware Wear and Stability Issues</h4>
+            <ol style="line-height: 2; margin-left: 20px;">
+                <li>Ultrasonic sensors are frequently touched and blocked by children at close range, easily accumulating dust and sensitivity drift. After half a year of use, frequent false triggers occur, resulting in high maintenance costs.</li>
+                <li>LED strips and Arduino main control work continuously for long periods with poor heat dissipation. In long-term home high-temperature environments, they are prone to short circuits and light flickering. Flickering directly stimulates autistic children's vision.</li>
+                <li>Heart rate pulse sensors are contact accessories. Uneven gripping strength and sweating by children lead to inaccurate data, causing the emotion monitoring function to fail.</li>
+            </ol>
+            
+            <h4 style="margin-top: 25px;">2. Program Iteration and Compatibility Shortcomings</h4>
+            <ol style="line-height: 2; margin-left: 20px;">
+                <li>The current program is a standalone offline system without cloud storage or data export functions. Rehabilitation therapists cannot track children's training and emotional data long-term, making it difficult to integrate with special education rehabilitation assessment systems.</li>
+                <li>There is no wireless program upgrade function. To modify level logic or lighting modes in the future, the device must be disassembled to rewrite code. Ordinary parents and institutions cannot update independently.</li>
+                <li>Error tolerance logic is fixed. Once lag or false triggers occur, there is no backend buffer algorithm, requiring whole machine reset. Long-term use will continuously increase failure frequency.</li>
+            </ol>
+            
+            <h4 style="margin-top: 25px;">3. Mass Production Process Challenges</h4>
+            <ol style="line-height: 2; margin-left: 20px;">
+                <li>The device includes handmade simulated moss and wooden landscapes, making standardized assembly line production difficult. Mass-produced products will have appearance and texture differences, making quality control difficult to unify.</li>
+                <li>3D printed sliders and bases have high single-piece production costs, limiting bulk pricing pressure reduction space. Landscape consumables (moss, wooden parts) have poor moisture resistance and are prone to mold and deformation in humid southern environments.</li>
+            </ol>
+        </section>
+
         <!-- Literature Review -->
         <section class="card">
             <h2>Literature Review</h2>
@@ -268,48 +332,6 @@
                     <li>Forms rehabilitation space design combining therapeutic function with traditional culture</li>
                 </ul>
             </div>
-        </section>
-
-        <!-- Conceptual Design -->
-        <section class="card" style="background-color: var(--color-sage-light);">
-            <h2>Key tech analyse</h2>
-            
-            <h3>Concept Device Description</h3>
-            <p>Our concept device integrates distance sensors and heart rate monitoring to create an engaging, therapeutic experience for autistic children:</p>
-            
-            <div style="background-color: white; padding: 20px; border-radius: 8px; margin: 20px 0;">
-                <h4 style="margin-top: 0;">Core Features:</h4>
-                <ol style="line-height: 2; margin-left: 20px;">
-                    <li><strong>Distance Sensor Line-Tracing:</strong> Children trace shapes or lines along grooves. Correct completion triggers positive light feedback, guiding hands-on practice to improve concentration.</li>
-                    <li><strong>Heart Rate Monitoring:</strong> Real-time monitoring via heart rate sensor. When children squeeze the light bulb, breathing effects display according to heartbeat speed, allowing observation of emotional fluctuations to adjust training rhythm.</li>
-                    <li><strong>Gamified Interaction:</strong> Reduces resistance through game-like interaction format.</li>
-                    <li><strong>Positive Reinforcement:</strong> Enhances concentration through positive incentives.</li>
-                </ol>
-            </div>
-            
-            <div style="background-color: #d4edda; border-left: 4px solid #28a745; padding: 15px; margin: 20px 0; border-radius: 4px;">
-                <h4 style="margin-top: 0; color: #155724;">Design Benefits:</h4>
-                <ul style="line-height: 2; margin-left: 20px; color: #155724;">
-                    <li>Alleviate anxiety</li>
-                    <li>Coordinate limbs</li>
-                    <li>Improve concentration</li>
-                    <li>Reduce resistance</li>
-                    <li>Positive reinforcement approach</li>
-                </ul>
-            </div>
-            
-            <h3>Design Philosophy Integration</h3>
-            <p>Our design draws inspiration from the literature review:</p>
-            <ul style="line-height: 2; margin-left: 20px;">
-                <li><strong>From Paper 1:</strong> Line-tracing mechanism with immediate light feedback</li>
-                <li><strong>From Paper 2:</strong> Soft lighting and stable environment considerations</li>
-                <li><strong>From Paper 3:</strong> Multi-sensory integration (visual, tactile, emotional)</li>
-                <li><strong>From Paper 4:</strong> Physiological monitoring for emotion regulation</li>
-                <li><strong>From Paper 5:</strong> Positive reinforcement and graded difficulty levels</li>
-                <li><strong>From Paper 6:</strong> Safe, immersive interactive experience</li>
-                <li><strong>From Paper 7:</strong> Motor skill development through interactive play</li>
-                <li><strong>From Paper 8:</strong> Multi-sensory healing approach</li>
-            </ul>
         </section>
 
         <!-- Future Development -->
