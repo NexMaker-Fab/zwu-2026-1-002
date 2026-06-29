@@ -595,6 +595,85 @@ void loop() {
             </div>
         </section>
 
+        <!-- Heart Rate Monitoring Code -->
+        <section class="card">
+            <h2>Heart Rate Monitoring Code</h2>
+            <p>The following Arduino code monitors heart rate using an analog sensor and controls LED flashing based on heartbeat detection:</p>
+            
+            <pre style="background-color: #e8e8e8; padding: 20px; border-radius: 8px; overflow-x: auto; font-family: 'Courier New', monospace; line-height: 1.6; margin: 20px 0;"><code>int heartPin = A0;
+int ledPin = 3;
+int heartValue = 0;
+int lastHeartValue = 0;
+int change = 0;
+bool isFlashing = false;          // Whether in flashing state
+unsigned long lastFlashTime = 0;
+bool ledState = false;
+
+void setup() {
+  pinMode(ledPin, OUTPUT);
+  digitalWrite(ledPin, LOW);
+  Serial.begin(9600);
+  lastHeartValue = analogRead(heartPin);
+  Serial.println("=================================");
+  Serial.println("❤ Heart rate detection started (flashing mode)");
+  Serial.println("Heartbeat detected → LED flashing  ✨");
+  Serial.println("Heartbeat lost     → LED off       ❌");
+  Serial.println("=================================");
+}
+
+void loop() {
+  heartValue = analogRead(heartPin);
+  change = abs(heartValue - lastHeartValue);
+
+  // ----- Determine if there is a heartbeat signal -----
+  if (heartValue &lt; 50 || change &gt; 200) {
+    // ✅ Has signal
+    if (!isFlashing) {
+      // Just transitioned from no signal to signal, print once
+      Serial.print("❤ Heartbeat detected! Value: ");
+      Serial.print(heartValue);
+      Serial.println("  → Start flashing ✨");
+    }
+    isFlashing = true;
+  } else {
+    // ❌ No signal
+    if (isFlashing) {
+      // Just transitioned from signal to no signal, print once
+      Serial.print("⏹ Heartbeat lost, value: ");
+      Serial.print(heartValue);
+      Serial.println("  → Turn off ❌");
+    }
+    isFlashing = false;
+    digitalWrite(ledPin, LOW);   // Turn off immediately
+    ledState = false;
+  }
+
+  // ----- If in flashing state, keep flashing -----
+  if (isFlashing) {
+    if (millis() - lastFlashTime &gt; 200) {  // Switch every 200ms
+      ledState = !ledState;
+      digitalWrite(ledPin, ledState ? HIGH : LOW);
+      lastFlashTime = millis();
+    }
+  }
+
+  lastHeartValue = heartValue;
+  delay(300);   // Detect every 300ms to avoid flooding serial monitor
+}</code></pre>
+            
+            <div style="background-color: #fff3cd; border-left: 4px solid #ffc107; padding: 15px; margin: 20px 0; border-radius: 4px;">
+                <h4 style="margin-top: 0; color: #856404;">Code Features:</h4>
+                <ul style="line-height: 2; margin-left: 20px; color: #856404;">
+                    <li><strong>Analog Heart Rate Sensor:</strong> Reads heart rate data from analog pin A0</li>
+                    <li><strong>Heartbeat Detection:</strong> Detects heartbeat when value &lt; 50 or change &gt; 200</li>
+                    <li><strong>LED Flashing:</strong> LED flashes at 200ms intervals when heartbeat is detected</li>
+                    <li><strong>Auto Shutoff:</strong> LED turns off immediately when heartbeat signal is lost</li>
+                    <li><strong>Serial Monitoring:</strong> Real-time status output with emoji indicators for easy debugging</li>
+                    <li><strong>Signal Stability:</strong> Uses absolute difference to detect significant changes in heart rate</li>
+                </ul>
+            </div>
+        </section>
+
         <!-- Device Introduction and Video -->
         <section class="card">
             <h2>Device Introduction</h2>
